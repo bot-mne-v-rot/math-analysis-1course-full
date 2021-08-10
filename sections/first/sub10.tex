@@ -1,0 +1,106 @@
+\subsection{Замкнутые множества. Замыкание множества}
+\begin{conj}
+    $(X, \beta)$ - метрическое пространство $A \subset X$ \\
+    $A \subset X \quad A$ - замкнутое, если $X \; \setminus \; A$ -  открытое
+\end{conj}
+\begin{theorem-non}
+    Свойства замкнутых множеств:
+    \begin{enumerate}
+        \item $\varnothing, X$ - замкнутое множества 
+        \item Пересечение любого количества замкнутых множеств - замкнутое множество
+        \item Объединение конечного числа замкнутых множеств - замкнутое множество
+        \item Замкнутый шарик - замкнутое множество
+    \end{enumerate}
+    \begin{proof}
+        \quad \\
+        \begin{enumerate}
+            \item[2.] $A_{\alpha} \; \alpha \in I$ - замкнутые множества. $A \overset{?}{\Longrightarrow} \bigcap\limits_{\alpha \in I} A_{\alpha}$ - замкнутое \\
+            $\rotatebox[origin=c]{-30}{$\Longrightarrow$} \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \rotatebox[origin=c]{30}{$\Longrightarrow$}$ \vspace{0,2cm}\\
+            $X \; \setminus \; A$ - открытое $\Longrightarrow \bigcup\limits_{\alpha \in I}(X \; \setminus \; A_{\alpha}) = X \; \setminus \; \bigcap\limits_{\alpha \in I} A_{\alpha}$ - открытое множество 
+            \item[3.] $A_1, A_2, \dots , A_n$ - замкнутые множества. $\Longrightarrow X \setminus A_1, X \setminus A_2, \dots , X \; \setminus \; A_n$ - открытые множества \\ 
+            $\Longrightarrow \bigcap\limits_{k = 1}^{n} (X \setminus A_k)$ - открытое множество \\
+            $\bigcap\limits_{k = 1}^{n} (X \setminus A_k) = X \setminus \bigcup\limits_{k = 1}^{n} A_k \Longrightarrow \bigcup\limits_{k = 1}^{n} A_k$ - замкнутое
+            \item[4.] $\overline{B_R}(a)$ - замкнутый шар\\
+            Докажем, что $X \; \setminus \; \overline{B_R}(a)$ - открыто
+            \begin{proof}
+                \quad \\
+                $\overline{B_R}(a) = \{x \in X: \rho(x, a) \leqslant R\}$ \\
+                Возьмем $b \in X \; \setminus \; \overline{B_R}(a) \Longrightarrow \rho(b, a) > R$ \\
+                $r := \rho(b, a) - R$ \\
+                Докажем, что $B_r(b) \subset X \; \setminus \; B_R(a) \Longleftrightarrow B_r(b) \cap \overline{B_R}(a) = \varnothing$ \\
+                От противного. Пусть есть общая точка $c \in B_r(b) \cap \overline{B_R}(a) \Longrightarrow 
+                \begin{cases}
+                    \rho(c, b) < r \\
+                    \rho(c, a) \leqslant R
+                \end{cases} \Longrightarrow \vspace{0,2cm}\\
+                \rho(a, b) \leqslant \rho(a, c) + \rho(c, b) < R + r = \rho(a,b)$  - Противоречие
+            \end{proof} 
+        \end{enumerate}
+    \end{proof}
+    \notice \\
+    В пункте №3 конечность существенна
+    $\bigcup\limits_{n=1}^{\infty}[-1 + {{1}\over{n}}; 1 - {{1}\over{n}}] = (-1; 1)$ \\ Интервал $(-\infty; \; -1] \cup [1; +\infty)$
+\end{theorem-non}
+\begin{conj}
+    Замыкание множества $A$ - пересечение всех замкнутых множеств, содержащих $A$. Обозначаетя как $Cl A$ \\
+    $Cl A = \bigcap \{ F: F $ - замкнутое и $ F \supset A \}$ 
+\end{conj}
+\begin{theorem-non}
+    \quad \\
+    $X \setminus Cl A = Int(X \setminus A)$ \\
+    $X \setminus Int A = Cl(X \setminus A)$
+\end{theorem-non}
+\begin{proof}
+    \quad \\
+    $x \in X \setminus Cl A \Longleftrightarrow x \notin Cl A \Longleftrightarrow x \notin F_{\circ}$ - замкнутое, где $F_{\circ} \supset A \\
+    \Longleftrightarrow 
+    \begin{cases}
+        x \in X \setminus F_{\circ} =: G_{\circ} $ - открытое$ \\
+        G_{\circ} \subset X \setminus A
+    \end{cases} \Longleftrightarrow x \in Int(X \setminus A)$ 
+\end{proof}
+\follow
+\quad \\
+$Cl A = X \setminus Int(X \setminus A)$ \\
+$Int A = X \setminus Cl(X \setminus A)$
+\begin{theorem-non}
+    Свойства замыкания \\
+    \begin{enumerate}
+        \item $Cl A$ - замкнутое множество 
+        \item $Cl A \supset A$
+        \item $A$ - замкнуто $\Longleftrightarrow A = Cl A$
+        \begin{proof}
+            $A$ - замкнуто $\Longleftrightarrow X \setminus A 
+            \Longleftrightarrow X \setminus A = Int(X \setminus A) \Longleftrightarrow \\ A = \underbrace{X \setminus Int(X \setminus A)}\limits_{Cl A}$
+        \end{proof}
+        \item Если $A \subset B$, то $Cl A\subset Cl B$
+        \begin{proof}
+            $A \subset B \Longleftrightarrow X \setminus A \supset X \setminus B \Longrightarrow Int(X \setminus A) \supset Int(X \setminus B) \Longrightarrow \\
+            \underbrace{X \setminus Int(X \setminus A)}_{Cl A} \subset \underbrace{X \setminus Int(X \setminus B)}_{Cl B}$
+        \end{proof}
+        \item $Cl(A \cup B) = Cl A \cup Cl B$
+        \begin{proof}
+            $Cl(A \cup B) = X \setminus Int(\underbrace{X\setminus(A \cup B)}_{(X\setminus A)\cap(X\setminus B)}) = 
+            X \setminus Int((X\setminus A) \cap (X\setminus B)) = \vspace{0,2cm} \\ X \setminus (Int(X\setminus A) \cap Int(X\setminus B)) =
+            (X \setminus Int(X\setminus A)\cup (X \setminus Int(X\setminus B) = Cl A \cup Cl B$
+        \end{proof}
+        \item $Cl Cl A = Cl A$
+        \begin{proof}
+            $Cl A$ - замкнуто + замыкание замкнутого множества - само множество
+        \end{proof}
+    \end{enumerate}
+\end{theorem-non}
+\begin{theorem-non}
+    $x \in Cl A \Longleftrightarrow$ для любого $r > 0: B_r(x) \cap A \neq \varnothing$
+\end{theorem-non}
+\begin{proof}
+    $x \in Cl A \Longleftrightarrow x \in X \setminus Int(X \setminus A) \Longleftrightarrow
+    x \notin Int(X \setminus A) \Longleftrightarrow$ для любого $r > 0: B_r(x)$ не целиком содержится 
+    в $X \setminus A \Longleftrightarrow$ для любого $r > 0: B_r(x) \cap A \neq \varnothing$ 
+\end{proof}
+\follow 
+\quad Если $\mathcal{U}$ - открытое и $\mathcal{U} \cap A = \varnothing$, то $\mathcal{U} \cap Cl A = \varnothing$
+\begin{proof}
+    Пусть $x \in \mathcal{U} \cap Cl A \Longrightarrow x \in \mathcal{U}$ - открытое $\exists r > 0 \quad B_r(x) \subset \mathcal{U}\\
+    x \in \mathcal{U} \cap Cl A \Longrightarrow x \in Cl A \Longrightarrow B_r(x) \cap A \neq \varnothing \Longrightarrow \mathcal{U} \cap A \neq \varnothing$ - противоречие
+\end{proof}

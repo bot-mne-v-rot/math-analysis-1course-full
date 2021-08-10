@@ -1,0 +1,31 @@
+\subsection{Предльный переход в неравенствах}
+
+    
+    \begin{theorem-non}
+        Предельный переход в неравенстве. $x_n, y_n \in \mathbb{R}$ \\
+        $x_n \leqslant y_n\ \forall n, a=\lim x_n, b=\lim y_n \Longrightarrow a\leqslant b$
+    \end{theorem-non}
+        
+    \begin{proof}
+        Пусть $a>b$ \\
+        $\varepsilon = \frac{a+b}{2}$ \\
+        $\exists N_1: \forall n\geqslant N_1\ x_n\in (a-\varepsilon, a+\varepsilon)$ \\
+        $\exists N_2: \forall n\geqslant N_2\ y_n \in (b-\varepsilon, b+\varepsilon)$ \\
+        $n:=\max\{N_1, N_2\}$ \\
+        $y_n \leqslant x_n$. Противоречие
+    \end{proof}
+    
+    \notice - неверно для строгого знака ($-1/n, 1/n$)
+    
+    \follow \; Если $x_n \leqslant b \forall n, \lim x_n = a \Longrightarrow a\leqslant b$
+    \begin{proof}
+        $y_n:=b$, далее из теоремы 1
+    \end{proof}
+    \follow \; Если $x_n \geqslant a \forall n, \lim x_n = b \Longrightarrow a \leqslant b$
+
+    \begin{proof}
+        $y_n:=a$, далее из теоремы 1
+    \end{proof}
+    
+    \follow \; $x_n \in [a, b], \lim x_n = c \Longrightarrow c \in [a, b]$. 
+    Следует из предыдущих

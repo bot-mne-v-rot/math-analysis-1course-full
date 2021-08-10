@@ -1,0 +1,45 @@
+\subsection{Открытые множества}
+\begin{conj}
+    Множество $A$ называется открытым, если $A \subset $ метрическому пространству $X$ и $\forall a \in A \; \exists r_{>0} : B_r(a) \subset A$
+\end{conj}
+\begin{theorem-non}
+    Свойства открытых множеств:
+    \begin{enumerate}
+        \item $\varnothing, X$ - открытые множества 
+        \item Объединение любого количества открытых множеств - открытое множество
+        \item Пересечение конечного числа открытых множеств - открытое множество
+        \item Открытый шарик - открытое множество
+    \end{enumerate}
+    \begin{proof}
+        \quad \\
+        \begin{enumerate}
+            \item $B_r(a) \subset X$; Для пустого множества нечего проверять, так как там даже точек то нет
+            \item $A_{\alpha} \; \alpha \in I$ - открытые множества. $A = \bigcup\limits_{\alpha \in I} A_{\alpha}$ \\
+            Возьмем $a \in A$. Тогда $a \in A_{\beta}$ для какого-то $\beta \in I \Longrightarrow A_{\beta}$ - открытое множество 
+            $\Longrightarrow B_r(a) \subset A_{\beta}$ для некоторого $r_{>0} \Longrightarrow$ \\
+            $B_r(a) \subset A_{\beta} \subset \bigcup\limits_{\alpha \in I} A_{\alpha} = A$
+            \item $A_1, A_2, \dots , A_n$ - открытые множества. $A = \bigcap\limits_{k = 1}^{n} A_k$
+            Возьмем $a \in A$. Тогда $a \in A_k$ при $k = \{1, 2, \dots , n\} \Longrightarrow
+            B_{r_k}(a) \subset A_k$ для некоторого $r_k > 0$ \\
+            $r := min\{r_1, r_2, \dots , r_k\} \Longrightarrow B_r(a) \subset B_{r_k}(a) \subset A_k 
+            \Longrightarrow B_r(a) \subset \bigcap\limits_{k=1}^n A_k = A$
+            \item Рассмотрим $B_R(a)$. Возьмем $b \in B_R(a)$ \\
+            $r := R-\rho(a, b) > 0$.
+            Докажем, что $x \in B_r(b):$ \\
+            $\rho(x, b) < r \Longrightarrow \rho(x,a) \leqslant \rho(x, b) + \rho(b,a) < r + \rho(b,a) = R$
+        \end{enumerate}
+    \end{proof}
+    \notice \\
+    В пункте №3 конечность существенна
+    $\bigcap\limits_{n=1}^{\infty} B_{1/n}(0) = \bigcap\limits_{n=1}^{\infty}(-{{1}\over{n}}; {{1}\over{n}}) = \{0\}$ Интервал $(-r; \; r)$
+\end{theorem-non}
+\subsubsection*{Пример}
+$\R \quad \rho(x, y) = \abs{x-y}$ \\
+$Y = [0; \; 2)$ \\
+Шары в $(Y, \rho)$: \\
+\begin{tikzpicture}
+    \draw (-.5,0)--(5.5,0);
+    \draw[color=black] (0, 0) node {\bfseries[} node[below=9pt]{$0$};
+    \draw[color=black] (4, 0) node {\bfseries)} node[below=9pt]{$2$};
+\end{tikzpicture} \\
+$B_1^Y(0) = \{x \in [0; \;2) : \abs{x - 0} < 1\} = [0; \; 1)$

@@ -1,0 +1,75 @@
+\subsection{Отношения}
+\begin{conj} 
+    Область определения: 
+    $\delta_{R} = \{x \in A: \exists y \in B, $ т.ч.$ \langle x, y \rangle  \in \mathbb{Z} \} $ 
+\end{conj}
+
+\begin{conj} 
+    Область значений: 
+    $\rho_{R} = \{y \in B: \exists x \in A, $ т.ч.$ \langle x, y \rangle  \in \mathbb{Z} \} $ 
+\end{conj}
+$\delta_{R^{-1}} = \rho_{R} \\
+\rho_{R^{-1}} = \delta_{R}$
+
+\begin{conj} 
+    Композиция отношений 
+\end{conj}
+
+\begin{itemize}
+    \item[] $R_1 \subset A \times B, \quad R_2 \subset B \times C, \quad R_1 \circ R_2 \subset A \times C$
+\end{itemize}
+\subsubsection*{Пример}
+\begin{itemize}
+    \item $\langle x, y \rangle \in R$, если x — отец y
+    \item $\langle x, y \rangle \in R \circ R$, если x — дед y
+    \item $\langle x, y \rangle \in R^{-1} \circ R$, если x — брат y
+    \item $\delta R$ — все, у кого есть сыновья
+\end{itemize}
+\begin{conj} 
+    Бинарным отношением $R$ называется подмножество элементов декартова произведения двух
+    множеств $R \subset A \times B$
+\end{conj}
+
+\begin{itemize}
+    \item[] Элементы $x \in A, y \in B$ находятся в отношении, если $  \langle x, y \rangle \in R $ (то же, что $xRy$)
+    \item[] Обратное отношение $R^{-1} \subset B \times A$ 
+\end{itemize}
+
+\begin{conj}
+    Отношение называется:
+\end{conj}
+\begin{itemize}
+    \item Рефлексивным, если $xRx \; \forall x$
+    \item Симметричным, если $xRy \Longrightarrow yRx$
+    \item Транзитивным, если $xRy, yRz \Longrightarrow xRz$
+    \item Иррефлексивным, если $\neg xRx \forall x$
+    \item Антисимметричным, если $xRy, yRx \Longrightarrow x = y$
+\end{itemize}
+
+\begin{conj}
+    $R$ является отношением
+\end{conj}
+\begin{itemize}
+    \item[1.] Эквивалентности, если оно рефлексивно, симметрично и транзитивно
+    \item[2.] Нестрогого частичного порядка, если оно рефлексивно, антисимметрично и транзитивно
+    \item[3.] Нестрогого полного порядка, если выполняется п. $2 + \forall x, y$ либо $xRy$, либо $yRx$
+    \item[4.] Строгого частичного порядка, если оно иррефлексивно и транзитивно
+    \item[5.] Строгого полного порядка, если выполняется п. $4 + \forall x$, y либо $xRy$, либо $yRx$
+\end{itemize}
+
+\subsubsection*{Пример}
+\begin{itemize}
+    \item $x \equiv y \; (mod \; m)$ — отношение эквивалентности
+    \item $X$ - множество$, 2^X$ — множество всех его подмножеств
+    \item $\forall x, y \in 2^x : \langle x, y \rangle \in R, $ если $ x \subsetneq y$ — отношение строгого частичного порядка
+    \item Лексикографический порядок на множестве пар натуральных чисел — отношение нестрогого полного порядка
+\end{itemize}
+
+\begin{conj}
+    Отображение $f: A  \longrightarrow B$ 
+\end{conj}
+\begin{itemize}
+    \item инъективно, если $f(x_1) = f(x_2) \Longleftrightarrow x_1 = x_2$
+    \item сюръективно, если $\rho_f = B$
+    \item биективно, если $f$ инъективно и сюръективно
+\end{itemize}

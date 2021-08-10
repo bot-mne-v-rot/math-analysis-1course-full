@@ -1,0 +1,64 @@
+\subsection{Принцип математической индукции}
+\begin{conj}
+    Принцип математической индукции
+\end{conj}
+$P_n$ -последовательность утверждений 
+\begin{enumerate}
+    \item $P_1$ - верно
+    \item $\forall n \in \mathbb{N}$ из $P_n$ следует $P_{n+1}$
+\end{enumerate}
+Тогда $P_n$ верно при всех $n \in \mathbb{N}$
+\begin{theorem-non}
+    В конечном множестве вещественных чисел есть наибольший и наименбший элемент
+\end{theorem-non}
+\begin{proof}
+    \quad \\
+    Докажем для максимума. Для минимума рассуждения аналогичны \\
+    Будем доказывать утверждение по индукции \\
+    Для $n = 1$ - очевидно \\
+    Переход $X_n \longrightarrow x_{n+1}$ \\
+    Рассмотрим произвольное множество из $n$ элементов $X_n = \{x_1, x_2, x_3, \dots x_n\}$, где максимальным элементом 
+    является $x_i$. Пусть в наше множество был добавлен элемент $X_{n+1}$. В таком случае, если $X_{n+1}$ > $X_{i}$, то новый максимум равен
+    $X_{n+1}$, иначе - максимумом по-прежнему является $X_{i}$. Таким образом, в любом конечном множестве вещественных чисел существует максимальный
+    элемент.     
+\end{proof}
+\textbf{\textit{Следствия:}}
+\begin{enumerate}
+    \item Во всяком непустом множестве натуральных чисел есть наименьший элемент  
+    \begin{proof}
+        \quad \\
+        Пусть $A$ - множество натуральных чисел, не содержащее наименьшего элемента.
+        Докажем по индукции, что для любого $n \in \mathbb{N}$ мы имеем $\mathbb{N}_n \cap A = \varnothing$ \\
+        $\N_n = \{k \in \N | k \leqslant n \}$ \\
+        Для $n = 1$ утверждение очевидно. \\
+        Переход $n \longrightarrow n+1$ \\
+        Предположим для $\mathbb{N}_n \cap A = \varnothing$ \\
+        Тогда если для $\mathbb{N}_{n+1} \cap A \neq \varnothing$, то наименьший элемент множества $A$ - это $n+1$ \\
+        Значит $\mathbb{N}_{n+1} \cap A = \varnothing$
+   \end{proof}
+   \item Во всяком конечном непустом множестве натуральных чисел есть наибольший элемент
+   \begin{proof}
+        \quad \\
+        Из натуральных чисел строим целые. Множество чисел $A \subseteq \Z$ называется ограниченным сверху и имеет наибольший элемент
+        если $\exists c > a, \forall a \in A, c \in \Z$
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Рациональные и иррациональные числа в интервале}
+\begin{enumerate}
+    \item Если $x, y \in \mathbb{R}, x < y$, то $\exists r \in \mathbb{Q}: x < r < y$ 
+    \begin{proof}
+        \quad \\ Пусть $x < 0, y > 0$. Тогда $\exists r = 0 \in \mathbb{Q}: x < r < y$ \\
+        Пусть $x \geqslant 0, y > 0, \varepsilon = x - y$. Тогда $\exists n \in \mathbb{N}: {{1}\over{n}} < \varepsilon$ \\
+        По принципу Архимеда найдется такое число $m$, что ${{m-1}\over{n}} \leqslant x < {{m}\over{n}}$ \vspace{0.2cm} \\
+        Предположим, что ${{m-1}\over{n}} \leqslant x < y \leqslant {{m}\over{n}}$. Тогда мы получим, что ${{1}\over{n}} \geqslant y - x = \varepsilon$.
+        Пришли к противоречию\\
+        Следовательно, $\exists m \in \mathbb{N} : x < {{m}\over{n}} < y$ \\
+        Случай $y \leqslant 0$ аналогичен предыдущему
+    \end{proof} 
+    \item Если $x, y \in \mathbb{R}, x < y$, то существует иррациональное число $r: x < r < y$ 
+    \begin{proof}
+        \quad \\ $x - \sqrt{2} < y - \sqrt{2} \Longrightarrow \exists R_{\in \Q} \in (x - \sqrt{2}, y - \sqrt{2}) \Longrightarrow
+        x < R + \sqrt{2} < y \; $(Предыдущий пункт)$ \; \Longrightarrow \\ r$ - иррациональное
+    \end{proof} 
+    \item Если $x \geqslant 1$, то $\exists n \in \mathbb{N}: x - 1 < n \leqslant x$ 
+\end{enumerate}

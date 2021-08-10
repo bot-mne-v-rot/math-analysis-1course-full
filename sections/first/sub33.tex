@@ -1,0 +1,39 @@
+\subsection{Подпоследовательности.
+    Теорема о стягивающихся отрезках}
+    
+    \begin{conj}
+    Последовательность $(x_n)$, $n_1 < n_2 < n_3 < ...$ Тогда
+    $(x_{n_k})$ - подпоследовательность.
+    \end{conj}
+    \textbf{Замечание.} $n_k \geqslant k$ (по индукции)
+    
+    \textbf{Свойства:}
+    \begin{enumerate}
+        \item Если последовательность имеет предел, то подпоследовательность
+        имеет тот же предел.
+        \item Пусть две подпоследовательности в объединении дают исходную
+        последовательность. Если подпоследовательности имеют одинаковый
+        предел, то исходная последовательность имеет тот же предел.
+    \end{enumerate}
+    
+    \begin{theorem-non}О стягивающихся отрезках.\end{theorem-non}
+    \[\text{Пусть }[a_1; b_1] \supset [a_2; b_2] \supset [a_3; b_3] 
+    \supset ... \text{ и } \lim (b_n - a_n) = 0\]
+    Тогда существует единственная точка $c$, принадлежащая всем отрезкам
+    и $\lim a_n = \lim b_n = c$.
+    \[\text{Т.е. } \bigcap_{n = 1}^{+\infty} [a_n; b_n] = \{c\}\]
+    
+    \begin{proof}
+        По теореме о вложенных отрезках $\bigcap_{n = 1}^{+\infty} [a_n; b_n]
+        \neq \varnothing$.
+        \[\text{Пусть } c,d \in \bigcap_{n = 1}^{+\infty} [a_n; b_n]
+        \Rightarrow c, d \in [a_n; b_n] \forall n; \text{ НУО, } d \geqslant c\]
+        \[0 \leqslant d - c \leqslant b_n - a_n \rightarrow 0 \Rightarrow c = d
+        \text{, иначе } \exists n : b_n - a_n < \varepsilon = d - c\]
+        \[0 \leqslant c - a_n \leqslant b_n - a_n \rightarrow 0
+        \xRightarrow[]{\text{2 мил.}}
+        c - a_n \rightarrow 0 \Rightarrow \lim a_n = c\]
+        \[0 \leqslant b_n - c \leqslant b_n - a_n \rightarrow 0
+        \xRightarrow[]{\text{2 мил.}}
+        b_n - c \rightarrow 0 \Rightarrow \lim b_n = c\]
+    \end{proof}

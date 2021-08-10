@@ -1,0 +1,74 @@
+\subsection{Фундаментальные последовательности. Критерий Коши.}
+    
+    \begin{conj}
+    Фундаментальная последовательность (сходящаяся в себе,
+    последовательность Коши)
+    \end{conj}
+    Пусть $(X, \rho)$ -- метрическое пространство. $x_n \in X$.
+    $x_n$ -- фундаментальная последовательность, если $\forall
+    \varepsilon > 0 \,\, \exists N : \forall n, m \geqslant N \,\,
+    \rho(x_n, x_m) < \varepsilon$
+    
+    \textbf{Свойства:}
+    \begin{enumerate}
+        \item Сходящаяся последовательность фундаментальна.
+        
+        \textbf{Доказательство:}\\
+        Пусть $\lim x_n := a$. Зафиксируем $\varepsilon > 0$.
+        Тогда $\exists N :\\ \forall n \geqslant N \,\,\, \rho(x_n, a) < 
+        \frac{1}{2} \varepsilon$\\ 
+        $\forall m \geqslant N \,\,\, \rho(x_m, a) < \frac{1}{2} \varepsilon$\\
+        $\Rightarrow \rho(x_n, x_m) \leqslant \rho(x_n, a) + \rho(x_m, a) <
+        \varepsilon$
+    
+        \item Фундаментальная последовательность ограничена
+        
+        \textbf{Доказательство:}\\
+        Берём $\varepsilon = 1$. Тогда $\exists N : \forall n, m \geqslant N \,\,
+        \rho(x_n, x_m) < 1 \Rightarrow$\\
+        $\Rightarrow \forall n \geqslant N \,\, \rho(x_n, x_N) < 1
+        \Leftrightarrow x_n \in B_1(x_N)$\\
+        $R := \max\{\rho(x_1, x_N), \rho(x_2, x_N), \dots, 
+        \rho(x_{N-1}, x_N)\} + 1 \Rightarrow \forall n \,\, x_n \in 
+        B_R(x_N)$
+    
+        \item Если у фундаментальной последовательности есть сходящаяся
+        подпоследовательность, то фундаментальная последовательность
+        имеет тот же предел.
+    
+        \textbf{Доказательство:}\\
+        Пусть $\lim x_{n_k} = a$. Зафиксируем $\varepsilon > 0$.\\
+        $\exists K : \forall k \geqslant K \quad \rho(x_{n_k}, a) <
+        \frac{1}{2} \varepsilon$\\
+        $\exists N : \forall n, m \geqslant N \quad \rho(x_n, x_m) <
+        \frac{1}{2} \varepsilon$\\
+        Возьмём $N \geqslant 0$ и подберём такое $k$, что $k \geqslant N$\\
+        и $n_k \geqslant N$ (например, $k \geqslant \max\{N, K\}$ подходит)\\
+        Тогда $\rho(x_n, x_{n_k}) < \frac{1}{2} \varepsilon$
+        (т.к. $n_k \geqslant N$)\\
+        И тогда $\rho(x_{n_k}, a) < \frac{1}{2} \varepsilon$
+        (т.к. $k \geqslant K$)\\
+        $\Rightarrow \rho(x_n, a) \leqslant \rho(x_n, x_{n_k}) +
+        \rho(x_{n_k}, a) < \varepsilon \Rightarrow \lim x_n = a$
+    \end{enumerate}
+    
+    \begin{theorem-non}Критерий Коши\end{theorem-non}
+    Числовая последовательность имеет предел $\Leftrightarrow$
+    она фундаментальна.
+    
+    \begin{proof} $ $
+    
+    ''$\Longrightarrow$'':\\
+    По свойству 1.
+    
+    ''$\Longleftarrow$'':\\
+    фундаментальность $\xRightarrow[]{\text{св-во 2}}$
+    ограниченность $\xRightarrow[]
+    {\text{Больцано–Вейерштрасса}}$\\
+    $\begin{rcases*}
+        \Rightarrow \text{сущ. сходящаяся подпосл.}\\
+        \quad\quad\text{фундаментальность}
+    \end{rcases*}$
+    $\xRightarrow[]{\text{св-во 3}}$ существует конечный предел.
+    
+    \end{proof}

@@ -1,0 +1,28 @@
+\subsection{Покоординатная сходимость в $\mathbb{R}^d$}
+    \[ x_n = <x_n^{(1)}, \dots, x_n^{(d)}> \]
+    $x_n$ покоординатно сходится к $x_0$, если \\
+    \begin{gather*}
+        \begin{cases}
+            \lim x_n^{(1)} = x_0^{(1)} \\
+            \dots \\
+            \lim x_n^{(d)} = x_0^{(d)}
+        \end{cases}
+    \end{gather*}
+    
+    \begin{theorem-non} \end{theorem-non}
+    $x_n$ покоординатно сходится к $x_0 \Longleftrightarrow x_n$ сходится к $x_0$ по норме в $\mathbb{R}^d$ 
+    
+    $||a|| = \sqrt{a_1^2 + \dots + a_d^2}$ - норма
+    
+    \begin{proof}
+        \[ ||x_n - x_0|| = \sqrt{(x_n^{(1)} - x_0^{(1)})^2 + \dots + (x_n^{(d)} - x_0^{(d)})^2} \]
+        Заметим следующее: 
+        \[ \sqrt{(x_n^{(1)} - x_0^{(1)})^2 + \dots + (x_n^{(d)} - x_0^{(d)})^2} \geqslant \sqrt{(x_n^{(k)} - x_0^{(k)})^2} = |x_n^{(k)} - x_0^{(k)}| \]
+        \[  \sqrt{(x_n^{(1)} - x_0^{(1)})^2 + \dots + (x_n^{(d)} - x_0^{(d)})^2} \leqslant |x_n^{(1)} - x_0^{(1)}| + \dots + |x_n^{(d)} - x_0^{(d)}| \]
+        Итого получаем
+        \[ |x_n^{(k)} - x_0^{(k)}| \leqslant ||x_n - x_0|| \leqslant |x_n^{(1)} - x_0^{(1)}| + \dots + |x_n^{(d)} - x_0^{(d)}| \]
+        Докажем $"\Leftarrow"$:
+        \[ \lim x_n = x_0 \Rightarrow ||x_n - x_0|| \to 0 \Rightarrow  |x_n^{(k)} - x_0^{(k)}| \to 0 \Rightarrow \lim x_n^{(k)} = x_0^{(k)} \]
+        Докажем $"\Rightarrow"$:
+        \[ \lim x_n^{(k)} = x_0^{(k)} \Rightarrow |x_n^{(k)} - x_0^{(k)}| \to 0 \Rightarrow \sum_{k = 1}^d |x_n^{(k)} - x_0^{(k)}| \to 0 \Rightarrow ||x_n - x_0|| \to 0 \Rightarrow \lim x_n = x_0  \]
+    \end{proof}

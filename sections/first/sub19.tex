@@ -1,0 +1,47 @@
+\subsection{Векторное пространство. Пространство $R^d$. Скалярное произведение. Неравенство Коши-Буняковского}
+    
+\begin{conj}
+    $X$ - векторное пространство (над полем $\mathbb{R}$), если:
+    Определена операции "+": $X\times X \to X$
+    "*": $\mathbb{R}\times X \to X$ \\
+    \begin{enumerate}
+        \item Сложение коммутативно и ассоциативно
+        \item Существует $\overrightarrow{0}$
+        \item Существует обратный элемент $x+(-x)=\overrightarrow{0}$
+        \item $(\alpha \beta)x = \alpha(\beta x)\ \forall \alpha, \beta \in \mathbb{R}\ \ \forall x\in X$
+        \item $(\alpha+\beta)x = \alpha x + \beta x$
+        \item $\alpha(x+y) = \alpha x + \alpha y$
+    \end{enumerate}
+\end{conj}
+\vspace*{0,5cm}
+
+\begin{conj}
+    \quad \\
+    $R^d = \{ \langle x_1, x_2,...,x_d\rangle  \}: x_i \in \mathbb{R}$
+
+    $\langle x_1,...,x_d\rangle +\langle y_1,...,y_d\rangle =\langle x_1+y_1,..., x_d + y_d\rangle $
+
+    $\alpha \langle x_1,...,x_d\rangle  = \langle \alpha x_1,..., \alpha x_d\rangle $
+\end{conj}
+
+\begin{conj}
+    Скалярное произведение $\langle \bullet, \bullet\rangle X\times X \to \mathbb{R}$
+
+    \begin{enumerate}
+        \item $\langle x, x\rangle \geqslant 0,\ \langle x, x\rangle =0 \Longleftrightarrow x=\overrightarrow{0}$
+        \item $\langle x, y\rangle = \langle y, x\rangle$
+        \item $\langle x+y, z\rangle = \langle x, z\rangle + \langle y, z \rangle $
+        \item $\langle \alpha x, y\rangle = \alpha \langle x, y \rangle $
+    \end{enumerate}
+\end{conj}
+
+\begin{conj}
+    Неравенство Коши-Буняковского: $\langle x, y \rangle^2 \leqslant \langle x, x \rangle \langle y, y \rangle$
+\end{conj} 
+
+\begin{proof}
+
+$f(t):=\langle x+ty, x+ty\rangle = \langle x, x+ty \rangle + \langle ty, x+ty \rangle =\langle x, x \rangle + t\langle x, y \rangle + t\langle y, x \rangle + t^2\langle y, y \rangle = \langle x, x \rangle + 2t\langle x, y \rangle + t^2\langle y, y \rangle \geqslant 0$. Это всегда неотрицательно, тогда дискриминант неположителен.
+
+\[4t^2\langle x, y \rangle^2 - 4t^2\langle x, x \rangle \langle y, y \rangle \leqslant 0 \Longrightarrow \langle x, y \rangle^2 \leqslant \langle x, x \rangle \langle y, y \rangle\]
+\end{proof}

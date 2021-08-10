@@ -1,0 +1,113 @@
+\subsection{Верхний и нижний пределы. Связь между частичными пределами и  
+    верхним и нижним пределами.}
+    
+    \begin{conj}
+    Нижний и верхний пределы
+    \end{conj}
+    $x_n$ - числовая последовательность.
+    
+    $\underline{\lim} x_n := \liminf x_n := \lim \inf_{k \geqslant n} x_k$ -- 
+    нижний предел.
+    
+    $\overline{\lim} x_n := \limsup x_n := \lim \sup_{k \geqslant n} x_k$ -- 
+    верхний предел.
+    
+    $y_n := \inf_{k \geqslant n} x_k = \inf\{x_n, x_{n+1}, x_{n+2}, \dots\}$
+    $\quad y_n \leqslant y_{n+1}$\\
+    $z_n := \sup_{k \geqslant n} x_k = \sup\{x_n, x_{n+1}, x_{n+2}, \dots\}$
+    $\quad z_n \geqslant z_{n+1}$
+    
+    \begin{theorem-non}
+        $\underline{\lim}$ и $\overline{\lim}$ существуют в 
+        $\overline{\mathbb{R}}$ и $\underline{\lim} \leqslant \overline{\lim}$
+    \end{theorem-non}
+    \begin{proof} $ $
+    
+    Про $\underline{\lim}$: $y_n \leqslant y_{n+1} \Rightarrow (y_n)$ --
+    возрастающая последовательность $\Rightarrow$ у неё есть предел в
+    $\overline{\mathbb{R}}$.
+    
+    Про $\overline{\lim}$: $z_n \geqslant z_{n+1} \Rightarrow (z_n)$ --
+    убывающая последовательность $\Rightarrow$ у неё есть предел в
+    $\overline{\mathbb{R}}$.
+    
+    Про неравенство $\underline{\lim} \leqslant \overline{\lim}$:
+    $y_n \leqslant z_n$, $y_n \rightarrow \underline{\lim}$,
+    $z_n \rightarrow \overline{\lim} \Rightarrow$ по предельному
+    переходу в неравенстве $\underline{\lim} \leqslant \overline{\lim}$.
+    \end{proof}
+    
+    \begin{theorem-non}\end{theorem-non}
+    \begin{enumerate}
+        \item $\overline{\lim}$ -- наибольший частичный предел
+        \item $\underline{\lim}$ -- наименьший частичный предел
+        \item $\exists \lim \in \overline{\mathbb{R}} \Leftrightarrow
+        \overline{\lim} = \underline{\lim}$ и в этом случае 
+        $\lim = \overline{\lim} = \underline{\lim}$ 
+    \end{enumerate}
+    \begin{proof} $ $
+    
+        \begin{enumerate}
+            \item $a := \overline{\lim} \, x_n$
+            
+            Рассмотрим \textbf{случай} $a \in \mathbb{R}$
+    
+            Докажем, что $a$ -- частичный предел.
+    
+            $a = \lim z_n$, $z_n = \sup_{k \geqslant n} x_k$, $z_n \searrow a$
+    
+            Будем строить некоторую подпоследовательность $(x_{n_k})$.\\
+            Найдётся $n_k > n_{k-1} : x_{n_k} > a - \frac{1}{k}$.
+            Пусть не нашлось $\Rightarrow x_n \leqslant a - \frac{1}{k} \forall
+            n \geqslant n_{k-1} \Rightarrow \sup \{x_{n_{k-1}}, x_{n_{k-1} + 1},
+            \dots \} \leqslant a - \frac{1}{k} \Rightarrow a \leqslant z_{n_{k - 1}} 
+            \leqslant a - \frac{1}{k}$. Противоречие
+    
+            $a - \frac{1}{k} \rightarrow a$, $z_{n_k} \rightarrow a$,
+            $a - \frac{1}{k} < x_{n_k} \leqslant z_{n_k} \xRightarrow[]
+            {\text{2 мил.}} x_{n_k} \rightarrow a$
+    
+            Докажем, что $a$ -- наибольший частичный предел.
+    
+            Пусть $b$ - частичный предел $\Rightarrow b = \lim x_{n_k}$.
+            Но $x_{n_k} \rightarrow b$, $z_{n_k} \rightarrow a \Rightarrow$
+            по предельному переходу $b \leqslant a$. 
+    
+            Рассмотрим \textbf{случай} $a = -\infty$.
+    
+            Тогда $z_n \rightarrow -\infty$, но $z_n = 
+            \sup\{x_n, x_{n+1},\dots\} \geqslant x_n \Rightarrow x_n
+            \rightarrow -\infty$.
+    
+            Рассмотрим \textbf{случай} $a = +\infty$.
+    
+            Тогда $z_n = +\infty \Rightarrow \sup {x_1, x_2, \dots} =
+            +\infty \Rightarrow x_n$ не ограничена сверху $\Rightarrow$
+            в ней найдётся подпоследовательность, стремящаяся к $+\infty$.
+    
+            \item Доказывается аналогично
+            
+            \item 
+            ''$\Longrightarrow$'':
+            
+            Если $a = \lim x_n$, то все подпоследовательности стремятся
+            к $a \Rightarrow$ все частичные пределы равны $a \Rightarrow
+            \overline{\lim} x_n = \underline{\lim} x_n = \lim x_n = a$.
+    
+            ''$\Longleftarrow$'':
+    
+            $y_n \rightarrow a$, $z_n \rightarrow a$, $y_n \leqslant x_n \leqslant z_n$
+            $\xRightarrow[]{\text{2 мил.}} x_n \rightarrow a \Rightarrow
+            \lim x_n = \overline{\lim}\, x_n = \underline{\lim}\, x_n = a$
+        \end{enumerate}
+    \end{proof}
+    
+    \textbf{Замечание.} Арифметики для верхних и нижних пределов нет.
+    
+    Пример.
+    \[x_n = (-1)^n, \quad y_n = (-1)^{n + 1} \Rightarrow
+    \underline{\lim}\, x_n = \underline{\lim}\, y_n = -1\]
+    \[x_n + y_n = 0 \Rightarrow \underline{\lim}\, (x_n + y_n) = 
+    \underline{\lim}\, (x_n + y_n) = 0\]
+    \[\underline{\lim}\, x_n + \underline{\lim}\, y_n = -2 < 0 =
+    \underline{\lim}\, (x_n + y_n)\]

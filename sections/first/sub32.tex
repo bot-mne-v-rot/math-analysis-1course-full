@@ -1,0 +1,62 @@
+\subsection{Теорема Штольца (для неопределённости $\frac 0 0$)}
+
+\begin{theorem-non}Штольца № 2\end{theorem-non}
+\[0<y_n<y_{n-1} \text{ и } \lim x_n = \lim y_n = 0
+\text{ Тогда если }\lim\frac{x_n - x_{n-1}}{y_n - y_{n-1}} = l \in
+\overline{\mathbb{R}}\text{, то }\lim \frac{x_n}{y_n} = l\]
+
+\begin{proof}
+    \textbf{Случай $l = 0$:}
+
+    Пусть \[\varepsilon_n := 
+    \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} \rightarrow 0\]
+
+    Зафиксируем $\varepsilon > 0$ и найдём $m$, т.ч. $
+    \abs{\varepsilon_n} < \varepsilon$ при $n \geqslant m$.
+    \[x_n - x_m = \sum_{k=m+1}^n(x_k - x_{k-1}) =
+    \sum_{k=m+1}^n \varepsilon_k (y_k - y_{k-1}) \Rightarrow
+    \abs{x_n - x_m} \leq\] \[\leqslant \sum_{k=m+1}^n -\abs{\varepsilon_k}
+    (y_k - y_{k-1}) < \varepsilon \sum_{k=m+1}^n (y_{k-1} - y_k) =
+    \varepsilon (y_m - y_n)\]
+    \[\abs{x_n - x_m} < \varepsilon (y_m - y_n)\]
+    \[\text{Устремим } n \text{ к } +\infty \Rightarrow
+    \abs{x_n - x_m} \rightarrow \abs{-x_m} = \abs{x_m}, \quad
+    \varepsilon (y_m - y_n) \rightarrow \varepsilon y_m \Rightarrow\]
+    \[\Rightarrow \text{по пред. переходу в нер., при }
+    m \geqslant \text{нек. } N \quad \abs{x_m} < \varepsilon y_m
+    \Rightarrow \abs{\frac{x_m}{y_m}} < \varepsilon
+    \Rightarrow \lim \frac{x_m}{y_m} = 0\]
+
+    \textbf{Случай $l \in \mathbb{R}$:}
+    Так же, как в теореме Штольца № 1
+    \[\widetilde{x_n} := x_n - l \cdot y_n, \widetilde{x_n} -
+    \widetilde{x_{n-1}} = x_n - x_{n-1} - l \cdot (y_n - y_{n-1})\]
+    \[\frac{\widetilde{x_n} - \widetilde{x_{n-1}}}
+    {y_n - y_{n - 1}} = \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}}  - l
+    \rightarrow 0 \xRightarrow[]{l = 0} \frac{\widetilde{x_n}}{y_n}
+    \rightarrow 0 \Rightarrow \frac{\widetilde{x_n}}{y_n} =
+    \frac{x_n - l \cdot y_n}{y_n} = \frac{x_n}{y_n} - l
+    \rightarrow 0 \Rightarrow \frac{x_n}{y_n} \rightarrow l\]
+
+    \textbf{Случай $l = +\infty$:}
+    \[\frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} \rightarrow +\infty
+    \Rightarrow \frac{x_{n - 1} - x_n}{y_{n - 1} - y_{n}} =
+    \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} > 1 \text{ начиная
+    с некоторого номера} \Rightarrow\] \[\Rightarrow
+    x_{n - 1} - x_n > y_{n - 1} - y_n > 0 \Rightarrow x_n
+    \text{ строго убывает} \Rightarrow \lim \frac{y_n - y_{n - 1}}
+    {x_n - x_{n - 1}} = 0 \xRightarrow[]{l = 0} \lim \frac{y_n}{x_n} = 0
+    \Rightarrow \] \[\Rightarrow \lim\frac{x_n}{y_n} = +\infty\]
+
+    \textbf{Случай $l = -\infty$:}
+    Так же, как в теореме Штольца № 1
+
+    Пусть $\widetilde{x_n} := -x_n$.
+    \[\frac{x_n - x_{n-1}}{y_n - y_{n - 1}} \rightarrow -\infty
+    \Rightarrow \frac{\widetilde{x_n} - \widetilde{x_{n-1}}}
+    {y_n - y_{n - 1}} = -\frac{x_n - x_{n-1}}{y_n - y_{n - 1}}
+    \rightarrow +\infty \Rightarrow -\frac{x_n}{y_n} =
+    \frac{\widetilde{x_n}}{y_n} \rightarrow +\infty
+    \Rightarrow \frac{x_n}{y_n} \rightarrow -\infty\] 
+
+\end{proof}

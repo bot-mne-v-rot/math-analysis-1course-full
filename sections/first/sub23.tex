@@ -1,0 +1,68 @@
+\subsection{Бесконечные пределы}
+    \begin{itemize}
+        \item \underline{$x_n \in \mathbb{R} \quad \lim x_n = +\infty$}
+        
+        Вне любого луча $(u, +\infty)$ находится лишь конечное число членов.
+        
+        $\forall u\quad \exists N: \forall n \geqslant N \quad x_n > u$
+        \item \underline{$x_n \in \mathbb{R} \quad \lim x_n = -\infty$}
+        
+        Вне любого луча $(-\infty, u)$ находится лишь конечное число членов.
+        
+        $\forall u\quad \exists N: \forall n \geqslant N \quad x_n < u$
+        
+        \item \underline{$x_n \in \mathbb{R} \quad \lim x_n = \infty$}
+        
+        В любом интервале $(u, v)$ находится лишь конечное число членов.
+        
+        $\forall u\quad \exists N: \forall n \geqslant N \quad |x_n| > u$
+    \end{itemize} 
+    \vspace{0.7cm}
+    \underline{Замечание 1}: Если $\lim x_n = +\infty$ или $\lim x_n = -\infty$, то $\lim x_n = \infty$. Обратное неверно (контрпример - $x_n = (-1)^nn$).
+    
+    \underline{Замечание 2}: Если $\lim x_n = \infty$, то ${x_n}$ не ограничена. Обратное неверно (контрпример - $x_n = n$(если $n$ четно) и $x_n = 0$ иначе).
+    \vspace{0.3cm}
+    
+    \begin{theorem-non} Единственность предела в $\overline{\mathbb{R}}$
+    \end{theorem-non}
+    Если $\lim x_n = a \in \overline{\mathbb{R}}$ и $\lim x_n = b \in \overline{\mathbb{R}}$, то $a = b$.
+    \begin{proof}
+        Пусть $a < b$. 
+        
+        Если $a,\;b \in \mathbb{R}$, то $a = b$ (должно быть доказано где-то раньше).
+        
+        Если $a \in \mathbb{R}$ и $b = +\infty$, то в $(a - 1, a + 1)$ и $(a + 1, +\infty)$ должно содержаться бесконечное число членов последовательности, но это невозможно. 
+        
+        Аналогично для случая  $a = -\infty$ и $b \in \mathbb{R}$.
+        
+        Если $a = \infty$ и $b = \infty$, то либо $a = b = +\infty$, либо $a = b = -\infty$.
+    \end{proof}
+    \begin{theorem-non} О стабилизации знака в $\overline{\mathbb{R}}$  \end{theorem-non}
+    Если $\lim x_n = a \in \overline{\mathbb{R}}$ и $a \neq 0$, то, начиная с некоторого номера, $x_n$ и $a$ одного знака. 
+    \begin{proof}
+        Не, ну это очевидно.
+    \end{proof}
+    \begin{theorem-non} О предельном переходе в неравенстве в $\overline{\mathbb{R}}$ \end{theorem-non}
+    \begin{enumerate}
+        \item Если $\lim x_n = +\infty$ и $x_n \leqslant y_n \;\forall n$, то $\lim y_n = +\infty$.
+        \begin{proof}
+            Мы знаем что,
+            \[ \forall u\quad \exists N: \forall n \geqslant N \quad x_n > u  \]
+            Так как $x_n \leqslant y_n \;\forall n$, то нам подойдет тоже $N$:
+            \[ \forall n \geqslant N \quad y_n \geqslant x_n > u  \]
+        \end{proof}
+        \item Если $\lim y_n = -\infty$ и $x_n \leqslant y_n \;\forall n$, то $\lim x_n = -\infty$.
+        \begin{proof}
+            Аналогично первому пункту.
+        \end{proof}
+        \item Если $x_n \leqslant y_n \;\forall n$ и $\lim x_n = a \in \overline{\mathbb{R}},\; \lim y_n = b \in \overline{\mathbb{R}}$, то $a \leqslant b$
+        \begin{proof} \quad \\
+        \begin{itemize}
+            \item $a, b \in R$, доказано ранее
+            \item $a = -\infty$, то $a \leqslant b$ всегда
+            \item $a = +\infty$, то по первому пункту $b = +\infty$
+            \item $b = +\infty$, то $a \leqslant b$ всегда
+            \item $b = -\infty$, то по второму пункту $a = -\infty$
+        \end{itemize}
+        \end{proof}
+    \end{enumerate}

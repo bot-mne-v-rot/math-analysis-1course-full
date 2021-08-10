@@ -1,0 +1,69 @@
+\subsection{Арифметические действия в $\overline{\mathbb{R}}$}
+    \begin{theorem-non} Об арифметических операциях с $\infty$ \end{theorem-non}
+    \begin{enumerate}
+        \item $x_n \to +\infty,\; y_n$ - ограниченная снизу $\Rightarrow x_n + y_n \to +\infty$
+        \begin{proof}
+            $y_n$ - ограниченная снизу $\Rightarrow y_n \geqslant a$ 
+            
+            $x_n \to +\infty \Rightarrow \forall u \quad \exists N: \forall n \geqslant N \quad x_n > u - a$ 
+            
+            $\Rightarrow x_n + y_n > u - a + a = u$
+        \end{proof}
+        \item $x_n \to -\infty,\; y_n$ - ограниченная сверху $\Rightarrow x_n + y_n \to -\infty$
+        \begin{proof}
+            Аналогично предыдущему пункту.
+        \end{proof}
+        \item $x_n \to \infty,\; y_n$ - ограниченная $\Rightarrow x_n \pm y_n \to \infty$
+        \begin{proof}
+            Аналогично первому пункту.
+        \end{proof}
+        \item $x_n \to \pm \infty,\; y_n \geqslant c > 0 \Rightarrow x_ny_n \to \pm \infty$
+        \begin{proof}
+            $x_n \to +\infty \Rightarrow \forall u \quad \exists N: \forall n \geqslant N \quad x_n>\frac{u}{c}$
+            
+            $y_n \geqslant c > 0 \Rightarrow x_ny_n \geqslant cx_n > u$
+            
+            Случай $x_n \to -\infty$ рассматривается аналогично.
+        \end{proof}
+        \item $x_n \to \pm \infty,\; y_n \leqslant c < 0 \Rightarrow x_ny_n \to \mp \infty$
+        \begin{proof}
+            Аналогично предыдущему пункту.
+        \end{proof}
+        \item $x_n \to \infty,\; |y_n| \geqslant c > 0 \Rightarrow x_ny_n \to \infty $
+        \begin{proof}
+            Аналогично четвертому пункту.
+        \end{proof}
+        \item $x_n \to a \neq 0,\; y_n \neq 0 \to 0 \Rightarrow \frac{x_n}{y_n} \to \infty$
+        \begin{proof}
+            $\lim \frac{y_n}{x_n} = 0 \Rightarrow \frac{y_n}{x_n}$ - б.м. $\Rightarrow \frac{x_n}{y_n}$ - б.б. $\Rightarrow \lim \frac{x_n}{y_n} = \infty$ 
+        \end{proof}
+        \item $x_n$ - ограниченная, $y_n \to \infty \Rightarrow \frac{x_n}{y_n} \to 0$
+        \begin{proof}
+            $y_n \to \infty \Rightarrow \frac{1}{y_n}$ - б.м. $\Rightarrow x_n * \frac{1}{y_n}$ - б.м.
+        \end{proof}
+        \item $x_n \to \infty,\; y_n \neq 0$ - ограниченная $\Rightarrow \frac{x_n}{y_n} \to \infty$
+        \begin{proof}
+            $y_n$ - ограниченная $\Rightarrow |y_n| \leqslant M$
+            
+            $x_n \to \infty \Rightarrow \forall u > 0 \quad \exists N : \forall n \geqslant N \quad |x_n| > uM \Rightarrow |\frac{x_n}{y_n}| \geqslant |\frac{x_n}{M}| > u$
+        \end{proof}
+    \end{enumerate}
+    \vspace{0.7cm}
+    Запрещенные операции:
+    \begin{itemize}
+        \item $+\infty \pm (\mp\infty)$
+        \item $-\infty \pm (\pm\infty)$
+        \item $\pm \infty * 0$
+        \item $\frac{0}{0}$
+        \item $\frac{\pm \infty}{\pm \infty}$
+    \end{itemize}
+    \vspace{0.3cm}
+    Почему эти операции запрещенные? Разберем на примере:
+    
+    $\lim x_n = \lim y_n = +\infty$ \\
+    $x_n - y_n$  может иметь любой предел в $\overline{\mathbb{R}}$, а может его вообще не иметь:
+    \begin{itemize}
+        \item $x_n = n + a,\; y_n = n \Rightarrow x_n - y_n = a \to a$
+        \item $x_n = 2n,\; y_n = n \Rightarrow x_n - y_n = n \to +\infty$
+        \item $x_n = n + (-1)^n,\; y_n = n \Rightarrow x_n - y_n = (-1)^n$ - предела не имеет
+    \end{itemize}

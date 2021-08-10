@@ -1,0 +1,41 @@
+\subsection{Норма}
+    
+    \begin{conj}
+        Норма $||\bullet || : X\to \mathbb{R}$\\
+        \begin{enumerate}
+            \item $||x|| \geqslant 0$, $||x|| = 0 \Longleftrightarrow x = \overleftarrow{0}$
+            \item $||\alpha x|| = |\alpha|*||x||$
+            \item $||x+y|| \leqslant ||x||+||y||$
+        \end{enumerate}
+    \end{conj}
+    
+    \subsubsection*{Примеры}
+    $X = \mathbb{R},\ ||x||:=|x|$
+    
+    $X = \mathbb{R}^d,\ ||x||:=|x_1|+|x_2|+...+|x_d|$
+    \begin{theorem-non}
+        Если $\langle \bullet, \bullet \rangle$ - скалярное произведение в $X$, то $||x||:= \sqrt{\langle x, x \rangle}$ - норма.\\
+        $||\alpha x|| = \sqrt{\langle \alpha x, \alpha x\rangle} = \sqrt{\alpha^2 \langle x, x\rangle} = |\alpha|\sqrt{\langle x, x \rangle}$\\
+        $||x+y||^2 = \langle x+y, x+y \rangle = \langle x,x\rangle + 2\langle x, y\rangle + \langle y, y\rangle \Longrightarrow ||x||^2 + 2\langle x, y\rangle + ||y||^2 \overset{?}{\leq} ||x||^2 + 2||x||*||y|| + ||y||^2$ \vspace*{0,001cm}\\
+        $2\langle x, y \rangle \leqslant 2||x||*||y|| = \sqrt{\langle x, x\rangle}\sqrt{\langle y, y\rangle\ }$ - верно по неравенству Коши Буняковского
+    \end{theorem-non}
+    
+    \begin{theorem-non}
+        Свойства норм:
+        \begin{enumerate}
+            \item $||x-y||=||(x-z)+(z-y)|| \leqslant ||x-z||+||z-y||$
+            \item $d(x, y):=||x-y||$ - метрика
+            \item $|\ ||x||-||y||\ | \leqslant ||x-y||$ \\
+            $|x|| = ||(x-y)+y|| \leqslant ||x-y||+||y||$ \\
+            $||y|| = ||(y-x)+x|| \leqslant ||y-x||+||x||=||x-y||+||x||$ \\
+            $||x-y||\geqslant ||x||-||y||$ \\
+            $||x-y||\geqslant -(||x||-||y||)$
+        \end{enumerate}
+    \end{theorem-non}
+    \begin{theorem-non}
+        $X$ - нормированное пространство. Тогда норма порождена некоторым скалярным произведением тогда и только тогда, когда
+    
+        $2(||x||^2+||y||^2)=||x+y||^2+||x-y||^2$ - тождество параллелограмма.
+    
+        Доказательства не будет. Автор принял Линал
+    \end{theorem-non}

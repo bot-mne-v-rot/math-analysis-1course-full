@@ -1,0 +1,51 @@
+\subsection{Внутренние точки. Внутренность множества}
+\begin{conj}
+    $(X, \beta)$ - метрическое пространство $A \subset X$ \\
+    $a \in A, \; a$ - \underline{внутренняя точка множества}, если $B_r(a) \subset A$ для некоторого $r > 0$
+    (Открытое множество - такое множество, у которого все точки внутренние) \\
+    \underline{Внутренность множества} - множество всех его внутренних точек. Обозначается как $Int A$ \\
+\end{conj}
+\begin{theorem-non}
+    Свойства внутренности: 
+    \begin{enumerate}
+        \item $Int A \subset A$
+        \item $Int A = \bigcup \{G: G \subset A $ и $G$ - открытое$\} =: B$
+        \begin{proof}
+            \quad \\
+            $\bullet \quad Int A \supset B$ \\
+            Возьмем $b \in B$. Тогда найдется открытое $G_{\circ} \subset A$, такое, что $b \in G_{\circ} \Longrightarrow$\\
+            $\exists r_{>0}$, такой, что $B_r(b) \subset G_{\circ} \subset A \Longrightarrow b$ - внутренняя точка $A$ \\
+            $\bullet \quad Int A \subset B$ \\
+            Возьмем $a \in Int A \Longrightarrow a$ - внутренняя точка $\Longrightarrow $ открытое множество $ B_r(a) \subset A$ для некоторого $r_{>0}
+            \Longrightarrow a \in B_r(a) \subset A$ \\
+            $a \in B_r(a) \subset B \Longrightarrow a \in B$
+        \end{proof}
+        \item $Int A$ - самое большое (по включению) открытое множество, содержащееся в $A$
+        \item $Int A$ - открытое множество
+        \item $Int A = A \Longleftrightarrow A$ - открытое 
+        \item $A \subset B \Longrightarrow Int A \subset Int B$
+        \begin{proof}
+            Пусть $a \in Int A \Longrightarrow B_r(a) \subset A$ для 
+            некоторого $r_{>0} \Longrightarrow a$ - внутренняя точка $B$
+        \end{proof}
+        \item $Int(A \cap B) = Int A \cap Int B$
+        \begin{proof}
+            \quad \\
+            ``$\subset$'' : $A \cap B \subset A \Longrightarrow Int(A \cap B) \subset Int A$. Это следует из предыдущего пункта. Аналогично для $B$\\ 
+            ``$\supset$'' : Пусть $c \in Int A \cap Int B \Longrightarrow 
+            \begin{cases}
+                c$ - внутренняя точка $A \\
+                c$ - внутренняя точка $B 
+            \end{cases} \Longrightarrow 
+            \begin{cases}
+                B_{r_1}(c) \subset A \\
+                B_{r_2}(c) \subset B
+            \end{cases}$ \vspace{0,2cm} \\ для некоторых $r_1, r_2 > 0 \Longrightarrow 
+            B_r(c) \subset A \cap B,$ где $r = min\{r_1, \; r_2\} \Longrightarrow \\ c$ - внутренняя точка $A \cap B$
+        \end{proof}
+        \item $Int(Int A) = Int A$
+        \begin{proof}
+            $Int A$ - открытое множество, а внутренность открытого множества совпадает с ним
+        \end{proof}
+    \end{enumerate}
+\end{theorem-non}

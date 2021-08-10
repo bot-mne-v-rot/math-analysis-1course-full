@@ -1,0 +1,46 @@
+\subsection{Определение экспоненты}
+    Рассмотрим последовательность $x_n = (1 + \frac{a}{n})^n$, где $a \in \mathbb{R}$
+    \begin{theorem-non}
+    $x_n$ монотонно возрастает, начиная с $n > -a$ и ограничена сверху
+    \end{theorem-non}
+    \begin{proof} \quad \\
+        \begin{enumerate}
+        \item Монотонное возрастание (если $a < 0$, то с номера $n = [-a] + 1$)
+        \begin{equation*}
+            \begin{split}
+                \frac{x_n}{x_{n - 1}} &= \frac{(1 + \frac{a}{n})^n}{(1 + \frac{a}{n - 1})^{n - 1}} \\ 
+                &= \frac{\frac{(n + a)^n}{n^n}}{\frac{(n - 1 + a)^{n - 1}}{(n - 1)^{n - 1}}} \\ 
+                &= \frac{(n - 1)^{n - 1}}{n^n} * \frac{(n + a)^n}{(n - 1 + a)^{n - 1}} \\
+                &= \frac{(n - 1)^n * (n + a)^n}{n^n * (n - 1 + a)^n } * \frac{n - 1 + a}{n - 1} \\
+                &= (\frac{n^2 - n + an - a}{n^2 - n + an})^n * \frac{n - 1 + a}{n - 1} \\ 
+                &= \underbrace{(1 - \frac{a}{n(n - 1 + a)})^n}_{\geqslant 1 - \frac{na}{n(n - 1 + a)} \;by\; Bernoulli's\; inequality} * \frac{n - 1 + a}{n - 1} \\
+                &\geqslant\frac{n - 1}{n - 1 + a} * \frac{n - 1 + a}{n - 1} = 1
+            \end{split}
+        \end{equation*}
+        \item Ограниченность сверху
+        
+        $y_n = (1 - \frac{a}{n})^n$ монотонно возрастает при $n > a$ 
+        
+        $x_ny_n = (1 + \frac{a}{n})^n * (1 - \frac{a}{n})^n = (1 - (\frac{a}{n})^2)^n \leqslant 1$
+        
+        $y_n \geqslant c > 0$, начиная с некоторого номера $\Rightarrow 1 \geqslant x_ny_n \geqslant cx_n \Rightarrow x_n \leqslant \frac{1}{c}$, начиная с некоторого номера $\Rightarrow x_n$ - ограниченная
+        \end{enumerate}
+    \end{proof}
+    \textbf{Следствие.} Существует конечный $\lim (1 + \frac{a}{n})^n$ 
+    \begin{conj} \quad \\
+        \begin{enumerate}
+            \item $exp\,a := \lim (1 + \frac{a}{n})^n$
+            \item $e := \lim (1 + \frac{1}{n})^n \approx 2,71828$
+        \end{enumerate}
+    \end{conj}
+    \underline{Замечание:} Последовательность $x_n = (1 + \frac{a}{n})^n$ при $a \neq 0$ \underline{строго} монотонно возрастает c $n > -a$. В доказателсьстве пользовались неравенством Бернулли, при $a \neq 0$ в нем строгий знак.
+    \vspace{0.5cm}
+    
+    \textbf{Следствие.} Последовательность $z_n = (1 + \frac{1}{n})^{n+1}$ строго убывает и стремиться к $e$
+    \begin{proof}
+        $z_n = \underbrace{(1 + \frac{1}{n})}_{\to 1} * \underbrace{(1 + \frac{1}{n})^n}_{\to e} \to e$
+        
+        $z_n = (\frac{n + 1}{n})^{n+1} = \frac{1}{(\frac{n}{n+1})^{n+1}} = \frac{1}{(1 - \frac{1}{n+1})^{n+1}}$
+        
+        Последовательность $(1 - \frac{1}{n+1})^{n+1}$ строго возрастает, следовательно, обратная к ней строго убывает. 
+    \end{proof}

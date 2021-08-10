@@ -1,0 +1,73 @@
+\subsection{Супремум и инфимум}
+\begin{conj}
+    \quad \\
+    \begin{itemize}
+        \item[] $x$ - верхняя граница множества $A$, если $\forall a \in A: a \leqslant x$
+        \item[] $y$ - нижняя граница множества $A$, если $\forall a \in A: y \leqslant a$ 
+        \item[] Множество ограничено снизу, если существует какая-нибудь нижняя граница
+        \item[] Множество ограничено сверху, если существует какая-нибудь верхняя граница
+    \end{itemize}
+\end{conj}
+\begin{conj}
+    \quad \\
+    Пусть $A$ - ограниченное сверху множество, тогда $sup A$ - наименьшая из его верхних границ
+\end{conj}
+\begin{conj}
+    \quad \\
+    Пусть $A$ - ограниченное снизу множество, тогда $inf A$ - наибольшая из его нижних границ
+\end{conj}
+\begin{theorem-non}
+    \quad \\
+    \begin{enumerate}
+        \item Если $A \subset \R, A \neq \varnothing $ и $ A $ ограничено снизу, то существует единственный $inf A$
+        \item Если $A \subset \R, A \neq \varnothing $ и $ A $ ограничено сверху, то существует единственный $sup A$
+    \end{enumerate}
+\end{theorem-non}
+\begin{proof}
+    \quad \\
+    Докажем (2) \\
+    Пусть $B$ - множество всех верхних границ множества $A$, т.е. $\forall a \in A, b \in B: a \leqslant b$ \\
+    Тогда по аксиоме полноты всегда найдется такой $c: a \leqslant c \leqslant b$ \\
+    $c - sup A$ по определению \\
+    Докажем, что $c$ - единсвтенный \\
+    Пусть $\exists c_1, c_2 - sup A$ \\
+    Тогда если $c_1 < c_2$, то $c_2 \neq sup A$ \\
+    Если $c_1 > c_2$,то $c_1 \neq sup A$ \\
+    Следовательно, $c_1 = c_2 = sup A \Longrightarrow sup A$ - единсвтенный  
+\end{proof}
+\follow
+\begin{enumerate}
+    \item $B \subset A, B \neq \varnothing $ и $ A $ ограничено снизу. Тогда $inf B \geqslant inf A$
+    \item $B \subset A, B \neq \varnothing $ и $ A $ ограничено сверху. Тогда $sup B \leqslant sup A$
+\end{enumerate}
+\begin{proof}
+    \quad \\
+    Докажем (1) \\
+    Пусть $a = inf A$. Тогда $a$ - нижняя граница $A \Longrightarrow \forall x \in
+    A : a \leqslant x \Longrightarrow \forall x \in B : a \leqslant x \Longrightarrow \\
+    a$ - нижняя граница $B \Longrightarrow a \leqslant inf B$  
+\end{proof}
+\notice - Теорема неверна без аксиомы полноты \\
+\begin{itemize}
+    \item[] $A =\{x \in \Q : x^2 < 2\} \Longrightarrow$ в множестве рациональных чисел у $A$ нет супремума
+\end{itemize}
+\begin{theorem-non}
+    \quad \\
+    \begin{enumerate}
+        \item $a = inf A \Longleftrightarrow 
+        \begin{cases}
+            a \leqslant x \quad \forall x \in A \\
+            \forall \varepsilon > 0 \quad \exists x \in A : x < a + \varepsilon
+        \end{cases}$ 
+        \item $b = sup A \Longleftrightarrow 
+        \begin{cases}
+            b \geqslant x \quad \forall x \in A \\
+            \forall \varepsilon > 0 \quad \exists x \in A : x > b - \varepsilon
+        \end{cases}$ 
+    \end{enumerate}
+\end{theorem-non}
+\notice
+\begin{itemize}
+    \item Если $A$ неограничено сверху, то $sup A = +\infty$
+    \item Если $A$ неограничено снизу, то $inf A = -\infty$
+\end{itemize}

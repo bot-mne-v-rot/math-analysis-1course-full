@@ -1,0 +1,32 @@
+\subsection{Сравнение скорости возрастания последовательностей}
+    \begin{theorem-non}
+        Пусть $x_n > 0$ и $\lim \frac{x_{n+1}}{x_n} < 1$. Тогда $x_n \to\,0$
+    \end{theorem-non}
+    \begin{proof} \quad \\\\
+        $l := \lim \frac{x_{n+1}}{x_n}$. Начиная с некоторого номера $m \;\; \frac{x_{n+1}}{x_n} < \frac{1 + l}{2} =: q < 1$
+        
+        При $n \geqslant m$ 
+        \[ 0 < x_n = \frac{x_n}{x_{n-1}} * \frac{x_{n-1}}{x_{n-2}} * \frac{x_{n-2}}{x_{n-3}} * \dots * \frac{x_{m+1}}{x_m} * x_m < q^{n-m}x_m = q^n * \frac{x_m}{q^m} \]
+        \[ 0 < x_n < q^n * \frac{x_m}{q^m} \to 0 \Rightarrow x_n \to 0  \]
+    \end{proof}
+    \textbf{Следствие.}
+    \begin{enumerate}
+        \item $\lim \frac{n^k}{a^n} = 0$ при $a > 1$ (показательная функция растет быстрее полиномиальной)
+        \begin{proof}
+            $x_n = \frac{n^k}{a^n}$
+            \[ \frac{x_{n+1}}{x_n} =
+            \frac{(n+1)^ka^n}{a^{n+1}n^k} = 
+             (\frac{n+1}{n})^k * \frac{a^n}{a^{n+1}} = \frac{1}{a} * (1 + \frac{1}{n})^k \to \frac{1}{a} < 1 \Rightarrow x_n \to 0\]
+        \end{proof}
+        \item $\lim \frac{a^n}{n!} = 0$ (факториал растет быстрее показательной)
+        \begin{proof}
+            $x_n = \frac{a^n}{n!}$
+            \[ \frac{x_{n+1}}{x_n} =  \frac{a^{n+1}n!}{(n+1)!a^n}
+            = a\frac{n!}{(n+1)!} = \frac{a}{n+1} \to 0 < 1 \Rightarrow x_n \to 0 \]
+        \end{proof}
+        \item $\lim \frac{n!}{n^n} = 0$
+        \begin{proof}
+            $x_n = \frac{n!}{n^n}$
+            \[ \frac{x_{n+1}}{x_n} = \frac{(n+1)!n^n}{(n+1)^{n+1}n!} = \frac{(n+1)n^n}{(n+1)^{n+1}} = (\frac{n}{n+1})^n = \frac{1}{(\frac{n + 1}{n})^n} = \frac{1}{(1 + \frac{1}{n})^n} \to \frac{1}{e} < 1 \Rightarrow x_n \to 0 \]
+        \end{proof}
+    \end{enumerate}

@@ -1,0 +1,100 @@
+\subsection{Теорема Штольца (для неопределённости $\frac \infty \infty$)}
+
+    \begin{theorem-non} Штольца № 1 \end{theorem-non}
+        Пусть $(y_n)$ строго возрастает и $\lim y_n = +\infty$. 
+        Тогда если $\lim \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} = l \in
+        \overline{\mathbb{R}}$, то $\lim \frac{x_n}{y_n} = l$.
+    \begin{proof}
+        \textbf{Ключевой случай $l = 0$:}
+    
+        Пусть \[\varepsilon_n := 
+        \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} \rightarrow 0\]
+    
+        Зафиксируем $\varepsilon > 0$ и найдём $m$, т.ч. $
+        \abs{\varepsilon_n} < \varepsilon$ при $n \geqslant m$.
+    
+        \[x_n - x_m = (x_n - x_{n - 1}) + (x_{n - 1} - x_{n - 2})
+        + ... + (x_{m + 1} - x_m) = \sum_{k=m+1}^n \varepsilon_k
+        \cdot (y_k - y_{k - 1})\]
+        \[\abs{x_n - x_m} \leqslant \sum_{k=m+1}^n \abs{\varepsilon_k}
+        \cdot (y_k - y_{k - 1}) < \sum_{k=m+1}^n \varepsilon
+        \cdot (y_k - y_{k - 1}) = \varepsilon \cdot \sum_{k=m+1}^n 
+        (y_k - y_{k - 1}) = \varepsilon \cdot (y_n - y_m) <
+        \varepsilon y_n\]
+    
+        Можно считать, что $y_m > 0$ (по теореме о стабилизации знака).
+    
+        Заметим, что $\abs{x_m}$ фиксировано, а $y_n \rightarrow +\infty$
+        $\Rightarrow$ $\lim \frac{\abs{x_m}}{y_n} = 0$ и
+        $\frac{\abs{x_m}}{y_n} < \varepsilon$, начиная с некоторого номера.
+    
+        \[\abs{x_n} \leqslant \abs{x_m} + \abs{x_n - x_m} < 
+        \abs{x_m} + \varepsilon y_n \Rightarrow \abs{\frac{x_n}{y_n}} <
+        \frac{\abs{x_m}}{y_n} + \varepsilon < 2 \varepsilon\]
+        начиная с некоторого номера $\Rightarrow \lim \abs{\frac{x_n}{y_n}} = 0 = l$.
+    
+        \textbf{Случай $l \in \mathbb{R}$:}
+        \[\widetilde{x_n} := x_n - l \cdot y_n, \widetilde{x_n} -
+        \widetilde{x_{n-1}} = x_n - x_{n-1} - l \cdot (y_n - y_{n-1})\]
+        \[\frac{\widetilde{x_n} - \widetilde{x_{n-1}}}
+        {y_n - y_{n - 1}} = \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}}  - l
+        \rightarrow 0 \xRightarrow[]{l = 0} \frac{\widetilde{x_n}}{y_n}
+        \rightarrow 0 \Rightarrow \frac{\widetilde{x_n}}{y_n} =
+        \frac{x_n - l \cdot y_n}{y_n} = \frac{x_n}{y_n} - l
+        \rightarrow 0 \Rightarrow \frac{x_n}{y_n} \rightarrow l\]
+    
+        \textbf{Случай $l = +\infty$:}
+    
+        \[\frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} \rightarrow +\infty
+        \Rightarrow \frac{x_n - x_{n - 1}}{y_n - y_{n - 1}} > 1\] 
+        начиная с некоторого номера \\
+        $\Rightarrow x_n - x_{n - 1} > y_n - y_{n - 1} > 0 \Rightarrow
+        x_n$ строго возрастает с нек. номера $m \Rightarrow$\\
+        $\Rightarrow x_n - x_m > y_n - y_m \Rightarrow
+        x_n > y_n + (x_m - y_m) \rightarrow +\infty \Rightarrow
+        x_n \rightarrow +\infty$
+    
+        Рассмотрим
+        \[\frac{y_n - y_{n - 1}}{x_n - x_{n - 1}} \rightarrow 0
+        \xRightarrow[]{l = 0} \frac{y_n}{x_n} \rightarrow 0 \Rightarrow
+        \frac{x_n}{y_n} \rightarrow +\infty\] (а не $\infty$, т.к. 
+        $x_n > 0, y_n > 0$ с нек. номера)
+    
+        \textbf{Случай $l = -\infty$}
+    
+        Пусть $\widetilde{x_n} := -x_n$.
+        \[\frac{x_n - x_{n-1}}{y_n - y_{n - 1}} \rightarrow -\infty
+        \Rightarrow \frac{\widetilde{x_n} - \widetilde{x_{n-1}}}
+        {y_n - y_{n - 1}} = -\frac{x_n - x_{n-1}}{y_n - y_{n - 1}}
+        \rightarrow +\infty \Rightarrow -\frac{x_n}{y_n} =
+        \frac{\widetilde{x_n}}{y_n} \rightarrow +\infty
+        \Rightarrow \frac{x_n}{y_n} \rightarrow -\infty\] 
+    
+    \end{proof}
+    
+    \textbf{Следствие.}
+    \[\text{Если } \lim a_n = a \in \overline{\mathbb{R}}
+    \text{, то } \lim \frac{a_1 + a_2 + ... + a_n}{n} = a\] 
+    \begin{proof}
+        \[x_n := \sum_{k=1}^n a_k, \quad y_n := n \nearrow +\infty\]
+        \[\lim \frac{x_n - x_{n-1}}{y_n - y_{n-1}} = \lim \frac{a_n}{n - (n - 1)}
+        = \lim a_n = a \Rightarrow \lim \frac{a_1 + a_2 + ... + a_n}{n} = a\]
+    \end{proof}
+    
+    Пример. Найти предел:
+    \[m \in \mathbb{N}, \quad \frac{1}{n^{m + 1}} \cdot \sum_{k=1}^{n} k^m\]
+    
+    \[x_n := \sum_{k=1}^{n} k^m, \quad y_n := n^{m + 1} \nearrow +\infty\]
+    \begin{gather*}
+        \lim \frac{y_n - y_{n - 1}}{x_n - x_{n - 1}} =
+        \lim \frac{n^{m + 1} - (n - 1)^{m + 1}}{n^m} =
+        \lim \frac{n^{m+1} - (n^{m+1} + \sum_{k = 1}^{m + 1} 
+        (C_{m+1}^k (-1)^k n^{m+1-k}))}{n^m} = \\
+        = \lim \sum_{k = 1}^{m + 1} 
+        ((-1)^{k+1} \cdot \frac{C_{m+1}^k}{n^{k - 1}}) =
+        \lim C_{m + 1}^1 + \lim \sum_{k = 2}^{m + 1} 
+        ((-1)^{k+1} \cdot \frac{C_{m+1}^k}{n^{k - 1}}) =
+        (m + 1) + 0 = m + 1
+    \end{gather*}
+    \[\lim\frac{x_n - x_{n - 1}}{y_n - y_{n-1}} = \frac1{m + 1}
+    \Rightarrow \lim\frac{x_n}{y_n} = \frac1{m + 1}\]

@@ -1,0 +1,43 @@
+\subsection{Топологическое пространство}
+    
+    \begin{conj}
+        $X$ - множество. Топология, это набор подмножеств $\Omega \subset X$, называющихся открытыми, таких что: 
+        \begin{enumerate}
+            \item $\varnothing, X$ - открытые
+            \item Объединение любого количество открытых - открыто
+            \item Пересечение конечного числа открытых - открыто\\
+        \end{enumerate}
+    \end{conj}
+    
+    \subsubsection*{Примеры}
+    \begin{itemize}
+        \item[] $\{\varnothing, X\}$
+        \item[] $X = [0, +\infty), \Omega = (a, +\infty), a\geqslant 0\}$
+    \end{itemize}  
+
+    \begin{conj}
+        Замкнутое множество - дополнение открытого
+    \end{conj}
+    \begin{conj}
+        $a$ - внутренняя точка множетсва $A$, если существует открытое множество $U$, т. ч. $a \in U, U\subset A$
+    \end{conj}
+    \begin{conj}
+        Внутренность $Int\ A$ - объединение всех открытых множеств, содержащихся в $A$. Равносильно - множество всех внутренних точек
+    \end{conj}
+    \begin{conj}
+        Замыкание $Cl\ A$ - пересечение всех замкнутых множеств, содержищих $A$
+    \end{conj}
+    \begin{conj}
+        $a = \lim x_n$, если вне любого открытого множества, содержащего точку $a$ находится лишь конечное число членов последовательности \\
+        $\forall U \ni a\ \exists N\ \forall n\geqslant N\ x_n \in U$
+    \end{conj}
+    \begin{conj}
+        Хаусдорфовость \\
+        $\forall a, b \in X \ \exists U, V$ - открытые множества, такие что $a\in U,\ b\in V,\ U\cap V = \varnothing$.
+    \end{conj}
+    \begin{conj} 
+        Если хаусдорфовость выполняется, то предел единственный.
+        \begin{proof}
+            Если $a, b$ - пределы, то $\exists U, V : a\in U,\ b\in V,\ U\cap V = \varnothing \Longrightarrow $ Вне $U$ лежит конечное количество членов, вне $V$ тоже, тогда и в $X$ конечное число членов. Противоречие
+        \end{proof}
+    \end{conj}

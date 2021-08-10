@@ -1,0 +1,29 @@
+\subsection{Неравенство Бернулли}
+    \[ (1 + x)^n \geqslant 1 + nx \quad x > -1,\; n \in \mathbb{N} \]
+    \begin{proof}
+        Индукция по $n$.
+        
+        База $n = 1: (1 + x) = 1 + x$
+        
+        Переход $n \to n + 1: (1 + x)^{n + 1} = \underbrace{(1 + x)}_{> 0}\underbrace{(1 + x)^n}_{assumption} \geqslant (1 + x)(1 + nx) = 1 + (n + 1)x + nx^2 \geqslant 1 + (n + 1)x$
+    \end{proof}
+    \underline{Замечание 1:} В неравенсте Бернулли почти всегда строгий знак, равенство достигается только в случаях, когда $n = 1$ или $x = 0$.
+    
+    \underline{Замечание 2:} $(1 + x)^p \geqslant 1 + px \quad x > -1$ верно при всех $p \geqslant 1$ и $p \leqslant 0$. Какая-то жесткая тема. Дали без доказателства.
+    \vspace{0.5cm}
+    
+    \textbf{Следствие.} 
+    \begin{enumerate}
+        \item Если $a > 1$, то $\lim a^n = +\infty$.
+        \begin{proof}
+            $a > 1 \Rightarrow a = 1 + x \quad x > -1$
+            
+            $a^n = (1 + x)^n \geqslant 1 + xn \to +\infty$
+        \end{proof}
+        \item Если $|a| < 1$, то $\lim a^n = 0$.
+        \begin{proof}
+            Считаем, что $a \neq 0$.
+            
+            $|\frac{1}{a}| > 1 \Rightarrow \lim |\frac{1}{a}|^n = +\infty \Rightarrow |\frac{1}{a}|^n$ - б.б. $\Rightarrow |a^n|$ - б.м. $\Rightarrow a^n$ - б.м.
+        \end{proof}
+    \end{enumerate}

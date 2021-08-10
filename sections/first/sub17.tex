@@ -1,0 +1,22 @@
+\subsection{Монотонные последовательности}
+    
+    \begin{conj}
+        \quad \\
+        \begin{itemize}
+            \item[] $x_n$ монотонно возрастает(убывает), если $\forall n\ x_n\leq(\geqslant ) x_{n+1}$
+            \item[] $x_n$ монотонна, если она монотонно возрастает или монотонно убывает
+        \end{itemize}
+    \end{conj}
+    
+    \begin{theorem-non}
+        Если последовательность монотонно возрастает(убывает) и ограничена сверху(снизу), то она имеет предел.
+    \end{theorem-non}
+    \begin{proof}
+        $x_n$ такова, что $x_1\leqslant x_2\leqslant x_3...$ и ограничена сверху. Тогда у нее есть $sup:=S$. Докажем, что $\lim x_n = S$. \\
+        $\forall \varepsilon>0\ \ S-\varepsilon$ не является верхней границей $\Longrightarrow \exists x_N>s-\varepsilon \Longrightarrow \forall n\geqslant N\ S-\varepsilon < x_n < S+\varepsilon \Longrightarrow$ S - предел
+    \end{proof}
+
+    \follow \; Если последовательность монотонна, то она имеет предел тогда и только тогда, когда она ограничена.
+
+    ``$\Longleftarrow$'' По доказанной теореме \\
+    ``$\Longrightarrow$'' Из свойств предела

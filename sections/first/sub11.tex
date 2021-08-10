@@ -1,0 +1,35 @@
+\subsection{Предельные точки. Связь с замыканием множества}
+\begin{conj}
+
+    Проколотая окрестность точки $a - B_r(a) \setminus {a}$ \\
+    Обозначается как $\overset{\circ}{\mathcal{U}}_a$
+\end{conj}
+    \begin{conj}
+        Предельная точка множества \\
+        $a$ - предельная точка множества $A$, если любая $\overset{\circ}{\mathcal{U}_a}\cap A \neq \varnothing$\\
+        $A'$ - множество предельных точек $A$
+    \end{conj} 
+    \begin{theorem-non}
+        Свойства:
+        \begin{enumerate}
+            \item $Cl(A) = A\cup A'$
+            \begin{proof}
+                $x \in Cl(A) \Longleftrightarrow B_r(x)\cap A \neq \varnothing \forall r>0$ (*) \\
+                Пусть $x \notin A$ . Тогда (*) равносильно $B_r(x)\setminus \{x\} \cap A \neq \varnothing \Longleftrightarrow x\in A'$
+            \end{proof}
+            \item $A \subset B \Longrightarrow A' \subset B'$
+            \begin{proof}
+                $x \in A' \Longrightarrow B_r(x)\setminus \{x\} \cap A  \neq \varnothing \Longrightarrow B_r(x)\setminus \{x\} \cap B \neq \varnothing \Longrightarrow x \in B'$
+            \end{proof}
+            \item $(A\cup B)' = A' \cup B'$
+            \begin{proof}
+                $A \cup B \supset A \Longrightarrow (A\cup B)' \supset A' \Longrightarrow (A\cup B) \supset A'\cup B'$ \\
+                Обратное включение. Пусть $x\in (A\cup B)'$ и $x \notin B' \Longrightarrow (B_r(x)\setminus \{x\})\cap (A\cup B) \neq \varnothing \Longrightarrow (B_r(x)\setminus \{x\})\cap A \neq \varnothing$ ИЛИ $(B_r(x)\setminus \{x\})\cap B \neq \varnothing$. \\
+                Второе неверно из $x\notin B'$, следовательно $x \in A'$
+            \end{proof}
+            \item $A$ замкнутно $\Longrightarrow A\supset A'$
+            \begin{proof}
+                $A$ - замкнуто $\Longrightarrow A = Cl(A) = A \cup A' \Longleftrightarrow A \supset A'$
+            \end{proof}
+        \end{enumerate}
+    \end{theorem-non}

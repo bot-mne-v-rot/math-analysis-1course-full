@@ -1,0 +1,23 @@
+\subsection{Теорема о двух милиционерах}
+    
+    
+    \begin{theorem-non}
+        Теорема о сжатой последовательности (о двух милиционерах) \\
+        $x_n \leqslant y_n \leqslant z_n\ \forall n\in N, \lim x_n = \lim z_n = a \Longrightarrow \lim y_n = a$
+    \end{theorem-non}
+    \begin{proof}
+        \[
+    \begin{drcases}
+    \lim x_n = a \Longrightarrow \forall \varepsilon>0\ \exists N_1: x_n\in (a-\varepsilon, a+\varepsilon)\\
+    \lim z_n = a \Longrightarrow \forall \varepsilon>0\  \exists N_2: z_n\in (a-\varepsilon, a+\varepsilon)
+    \end{drcases}
+    \Longrightarrow x_n > a-\varepsilon, z_n<a+\varepsilon 
+    \] \\
+    При $n\geqslant \max\{N_1, N_2\}\ a-\varepsilon<x_n\leqslant y_n \leqslant z_n<a+\varepsilon \Longrightarrow a-\varepsilon<y_n<a+\varepsilon$\\
+    \end{proof}
+    
+    \follow \; $|y_n|\leqslant z_n\ \forall n, \lim z_n = 0 \Longrightarrow \lim y_n = 0$
+    
+    \begin{proof}
+        $x_n:=-z_n \Longrightarrow x_n \leqslant |y_n| \leqslant z_n,\ x_n \to 0,\ z_n \to 0 \Longrightarrow y_n \to 0$
+    \end{proof}

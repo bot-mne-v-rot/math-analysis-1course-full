@@ -1,0 +1,75 @@
+\subsection{Арифметические свойства пределов последовательности}
+    $X$ - нормированное пространство \\
+    $x_n,\; y_n \in X \quad \lambda_n \in \mathbb{R}$ \\
+    $\lim x_n = x_0 \quad \lim y_n = y_0 \quad \lim \lambda_n = \lambda_0$ 
+    \begin{theorem-non} Арифметические свойства пределов в нормированном пространстве \end{theorem-non}
+    \begin{enumerate}
+        \item $lim (x_n + y_n) = x_0 + y_0$
+        \begin{proof}
+                \begin{gather*}
+                    ||x_n + y_n - (x_0 + y_0) || = || (x_n - x_0) + (y_n - y_0)|| \leqslant ||x_n - x_0|| + ||y_n - y_0|| \\
+                    \lim x_n = x_0 \Rightarrow \forall \varepsilon > 0 \quad \exists N_1 : \forall n \geqslant N_1 \quad ||x_n - x_0|| < \frac{\varepsilon}{2} \\
+                    \lim y_n = y_0 \Rightarrow \forall \varepsilon > 0 \quad \exists N_2 : \forall n \geqslant N_2 \quad ||y_n - y_0|| < \frac{\varepsilon}{2} 
+                \end{gather*}
+                Тогда при $n \geqslant max\{N_1, N_2\} \quad ||x_n + y_n - (x_0 + y_0)|| \leqslant ||x_n - x_0|| + ||y_n - y_0|| < \varepsilon$
+        \end{proof}
+        \item $\lim (x_n - y_n) = x_0 - y_0$
+        \begin{proof}
+                Аналогично первому пункту.
+        \end{proof}
+        \item $\lim \lambda_nx_n = \lambda_0x_0$
+        \begin{proof}
+                \begin{gather*}
+                || \lambda_nx_n - \lambda_0x_0 || = ||(\lambda_nx_n - \lambda_nx_0) + (\lambda_nx_0 - \lambda_0x_0)|| \leqslant \\
+                \leqslant ||\lambda_nx_n - \lambda_nx_0|| + ||\lambda_nx_0 - \lambda_0x_0|| = |\lambda_n|*||x_n - x_0|| + |\lambda_n - \lambda_0|*||x_0||
+                \end{gather*} 
+                Так как у $\lambda_n$ есть предел, она ограничена, то есть $|\lambda_n| \leqslant M$. \\
+                Итого получаем:
+                \[ || \lambda_nx_n - \lambda_0x_0 || \leqslant M*||x_n - x_0|| + ||x_0||*|\lambda_n - \lambda_0|| \]
+                \begin{gather*}
+                    \lim x_n = x_0 \Rightarrow \forall \varepsilon > 0 \quad \exists N_1 : \forall n \geqslant N_1 \quad ||x_n - x_0|| < \frac{\varepsilon}{2M} \\
+                    \lim \lambda_n = \lambda_0 \Rightarrow \forall \varepsilon > 0 \quad \exists N_2 : \forall n \geqslant N_2 \quad |\lambda_n - \lambda_0| < \frac{\varepsilon}{2||x_0||+1}
+                \end{gather*}
+                При $n \geqslant max\{N_1, N_2\}$
+                \[|| \lambda_nx_n - \lambda_0x_0 || \leqslant M*||x_n - x_0|| + ||x_0||*|\lambda_n - \lambda_0|| < M * \frac{\varepsilon}{2M} + ||x_0|| * \frac{\varepsilon}{2||x_0||+1} < \varepsilon\]
+        \end{proof}
+        \item $\lim ||x_n|| = ||x_0||$
+        \begin{proof}
+                \[ ||x_n|| - ||x_0|| = ||(x_n - x_0) + x_0|| - ||x_0|| \leqslant ||x_n - x_0|| + ||x_0|| - ||x_0|| = ||x_n - x_0|| \to 0 \]
+        \end{proof}
+        \item Если в $X$ есть скалярное произведение, то $\lim<x_n, y_n> = <x_0, y_0>$
+        \begin{proof}
+            \begin{gather*}
+                <x_n, y_n> - <x_0, y_0> = <x_n, y_n> - <x_n, y_0> + <x_n, y_0> - <x_0, y_0> =  \\
+                = <x_n, y_n - y_0> + <x_n - x_0, y_0> \\
+                | <x_n, y_n> - <x_0, y_0> | \leqslant | <x_n, y_n - y_0> | + | <x_n - x_0, y_0> | \leqslant \\
+                \leqslant ||x_n||*||y_n-y_0||+||x_n-x_0||*||y_0||
+            \end{gather*}
+            Так как у $x_n$ есть предел, она ограничена, то есть $||x_n|| \leqslant M$. \\
+            Итого получаем:
+            \begin{gather*}
+                | <x_n, y_n> - <x_0, y_0> | \leqslant M*\underbrace{||y_n - y_0||}_{\to 0}+||y_0||*\underbrace{||x_n - x_0||}_{\to 0}
+            \end{gather*}
+        \end{proof}
+    \end{enumerate}
+    \begin{theorem-non} Арифметические свойства пределов числовых последовательностей \end{theorem-non}
+    $x_n,\; y_n \in \mathbb{R} \quad \lim x_n = x_0 \quad \lim y_n = y_0$
+    \begin{enumerate}
+        \item $\lim (x_n \pm y_n) = x_0 \pm y_0$
+        \item $\lim (x_ny_n) = x_0y_0$
+        \item $\lim |x_n| = |x_0|$
+        \item Если $y_0 \neq 0$ и $y_n \neq 0\;\; \forall n$, то $\lim \frac{x_n}{y_n} = \frac{x_0}{y_0}$
+        \begin{proof}
+            Докажем, что $\lim\frac{1}{y_n} = \frac{1}{y_0}$:
+            \[ | \frac{1}{y_n} - \frac{1}{y_0} | = \frac{|y_n - y_0|}{|y_n||y_0|} \]
+            Так кая $y_0 = \lim y_n$, найдется такое $N_1$, что $\forall n \geqslant N_1 \quad |y_n| \in (\frac{|y_0}{2}, \frac{3|y_0|}{2}) \Rightarrow |y_n| > \frac{|y_0|}{2}$ \\
+            При $n >= N_1$ получаем, что
+            \begin{gather*}
+                \frac{|y_n - y_0|}{|y_n||y_0|} < \frac{|y_n - y_0|}{\frac{|y_0|}{2}|y_0|} \\
+                lim y_n = y_0 \Rightarrow \forall \varepsilon > 0 \quad \exists N_2 : \forall n \geqslant N_2 \quad |y_n - y_0| < \frac{\varepsilon*y_0^2}{2}
+            \end{gather*}
+            Тогда если $n \geqslant max\{N_1, N_2\}$, то $|\frac{1}{y_n} - \frac{1}{y_0}| < \varepsilon$.
+            Теперь, когда мы знаем, что $lim\frac{1}{y_n} = \frac{1}{y_0}$, доказать исходное равенство легко:
+            \[ \lim \frac{x_n}{y_n} = \lim (x_n * \frac{1}{y_n}) = \lim x_n * \lim \frac{1}{y_n} = \frac{x_0}{y_0} \]
+        \end{proof}
+    \end{enumerate}

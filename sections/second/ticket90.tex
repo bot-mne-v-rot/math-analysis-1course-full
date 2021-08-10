@@ -1,0 +1,47 @@
+\subsection{Определение первообразной и неопределенного интеграла. Общий вид первообразной. Примеры функций не имеющих первообразную \href{https://youtu.be/p9C57KDo1Yg?t=3244}{\Walley}}
+
+\begin{conj}
+    $f: \langle a, b \rangle \longrightarrow \R$. $F: \langle a, b \rangle \longrightarrow \R$ - первообразная $f$, если
+
+    $F'(x) = f(x)\ \forall x\in \langle a, b \rangle$
+\end{conj}
+
+Не всякая функция имеет первообразную. Примеры
+\begin{itemize}
+    \item sign $x:= \begin{cases}
+        1,\ x > 0\\
+        0,\ x = 0\\
+        -1,\ x < 0\\
+    \end{cases}$
+    Пусть sign $x = F'(x)$, рассмотрим отрезок $[-1, 1]$.
+
+    $F'(1) = 1,\ F'(-1) = -1$, тогда по теореме Дарбу $F'$ принимает все промежуточные значения, а это не так.
+
+    \item По этому примеру можно понять, что не подходит любая функция, у которой есть "скачок"
+\end{itemize}
+
+\begin{theorem-non}
+    Непрерывная на промежутке функция имеет первообразную. Доказательства еще не было
+\end{theorem-non}
+
+\begin{theorem-non}
+    $f, F: \langle a, b \rangle \longrightarrow \R,\ F$ - первообразная, $f$
+    \begin{itemize}
+        \item $F + C$ - первообразная $f$, где $C$ - любая константа
+        \item $\Phi: \langle a, b \rangle \longrightarrow \R$ - первообразная $f \Rightarrow$ $\Phi = F+C$ для некоторой $C$
+    \end{itemize}
+\end{theorem-non}
+
+\begin{proof}
+    1) $(F(x)+C)' = F'(x) = f(x)$
+    
+    2) $(\Phi(x)-F(x))' = \Phi'(x) - F'(x) = 0 \Rightarrow \Phi - F$ - константа
+\end{proof}
+
+\begin{conj}
+    Неопределенный интеграл - множество всех первообразных
+
+    $\int f(x) dx$ или $\int f$
+\end{conj}
+
+Замечание. Для проверки равенства $\int f = F(x) + C$ достаточно доказать, что $F'(x) = f$

@@ -1,0 +1,33 @@
+\subsection{Свойства экспоненты}
+    \begin{enumerate}
+        \item Для любого $a \in \mathbb{R} \quad exp\,a > 0$
+        \item $exp\,0 = 1,\; exp\,1 = e$
+        \item Если $a \leqslant b$, то $exp\,a \leqslant exp\,b$
+        \begin{proof}
+            $0 < 1 + \frac{a}{n} \leqslant 1 + \frac{b}{n}$ при $n > -a \Rightarrow \underbrace{(1 + \frac{a}{n})^n}_{\to exp\,a} \leqslant \underbrace{(1 + \frac{b}{n})^n}_{\to exp\,b}$ при $n > -a$
+        \end{proof}
+        \item $exp\,a \geqslant 1 + a$
+        \begin{proof}
+            По неравенству Бернулли:
+            
+            $\underbrace{(1 + \frac{a}{n})^n}_{\to exp\,a} \geqslant 1 + n * \frac{a}{n} = 1 + a$ при $n > -a$
+        \end{proof}
+        \item $exp\,a * exp\,(-a) \leqslant 1$
+        \begin{proof}
+            $\underbrace{(1 + \frac{a}{n})^n}_{\to exp\,a} * \underbrace{(1 - \frac{a}{n})^n}_{\to exp\,(-a)} = (1 - (\frac{a}{n})^2)^n \leqslant 1$
+        \end{proof}
+        \item $exp\,a \leqslant \frac{1}{1 - a}$ при $a < 1$
+        \begin{proof}
+            С помощью двух предыдущих пунктов
+            
+            $exp\,a \leqslant\frac{1}{exp\,(-a)} \leqslant \frac{1}{1 - a}$
+        \end{proof}
+        \item $(1 + \frac{1}{n})^n < e < (1 + \frac{1}{n})^{n + 1}$ при всех $n$
+        \begin{proof}
+            $(1 + \frac{1}{n})^n < (1 + \frac{1}{n+1})^{n+1} \leqslant \underbrace{(1 + \frac{1}{m})^{m}}_{\to e}$ при $m
+            \geqslant n + 1 \Rightarrow (1 + \frac{1}{n})^n < e$
+            
+            $(1 + \frac{1}{n})^{n + 1} > (1 + \frac{1}{n+1})^{n + 2} \geqslant \underbrace{(1 + \frac{1}{m})^{m + 1}}_{\to e}$ при $m \geqslant n + 1 \Rightarrow (1 + \frac{1}{n})^{n + 1} > e$
+        \end{proof}
+        В частности, подставив $n = 1$ и $n = 5$ получаем, что $2 < e < 3$
+    \end{enumerate}

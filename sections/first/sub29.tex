@@ -1,0 +1,24 @@
+\subsection{Формула для экспоненты суммы}
+    \textbf{Лемма.}
+        Если $\lim a_n = a \in \mathbb{R}$, то $\lim (1 + \frac{a_n}{n})^n = exp\,a$    
+    \begin{proof}
+        Последовательность $a_n$ ограничена $\Rightarrow a_n \leqslant M,\; a \leqslant M$ и $M > 0$
+        
+        $A := 1 + \frac{a}{n} \leqslant 1 + \frac{M}{n} \quad B:= 1 + \frac{a_n}{n} \leqslant 1 + \frac{M}{n}$
+        
+        Надо доказать, что $\lim(A^n - B^n) = 0$
+        \begin{equation*}
+            \begin{split}
+                |A^n - B^n| &= |A - B|(A^{n-1} + A^{n-2}B + \dots + B^{n-1}) \\ &\leqslant |A-B|n(1 + \frac{M}{n})^{n-1} \\
+                &\leqslant |A-B|n(1 + \frac{M}{n})^n \\ 
+                &= \frac{|a-a_n|}{n}n(1 + \frac{M}{n})^n \\
+                &= |a - a_n|(1 + \frac{M}{n})^n \leqslant \underbrace{|a-a_n|}_{\to 0}*exp\,M
+            \end{split}
+        \end{equation*}
+    \end{proof}
+    \begin{theorem-non}
+        $exp\,(a+b) = exp\,a * exp\,b$
+    \end{theorem-non}
+    \begin{proof}
+        \[ \underbrace{(1 + \frac{a}{n})^n}_{\to\,exp\,a} * \underbrace{(1 + \frac{b}{n})^n}_{\to\,exp\,b} = (1 + \frac{a+b}{n} + \frac{ab}{n^2})^n = \underbrace{(1 + \frac{a + b + \frac{ab}{n}}{n})^n}_{a + b + \frac{ab}{n} := a_n \to\,a + b} = \underbrace{(1 + \frac{a_n}{n})^n}_{\to\,exp\,(a+b)} \]
+    \end{proof}

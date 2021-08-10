@@ -1,0 +1,30 @@
+\subsection{Бесконечно большие и малые последовательности}
+    \begin{itemize}
+        \item $x_n$ называется бесконечно большой, если $\lim x_n = \infty$
+        \item $x_n$ называется бесконечно малой, если $\lim x_n = 0$
+        \item $x_n$ называется сходящайся, если она имеет конечный предел
+    \end{itemize}
+    \vspace{0.7cm}
+    \begin{theorem-non} Связь между бесконечно большими и бесконечно малыми\end{theorem-non}
+    $x_n \neq 0\; \forall n$ \\
+    $x_n$ - б.б. $\Leftrightarrow \frac{1}{x_n}$ - б.м.
+    \begin{proof}
+        $x_n$ - б.б. $\Leftrightarrow \forall u > 0\quad \exists N : \forall n \geqslant N\quad |x_n| > u$ $\Leftrightarrow$ 
+        
+        $\Leftrightarrow \forall \varepsilon > 0\quad \exists N : \forall n \geqslant N\quad |x_n| > \frac{1}{\varepsilon} \Leftrightarrow \frac{1}{|x_n|} < \varepsilon \Leftrightarrow \frac{1}{x_n}$ - б.м.
+    \end{proof}
+    \begin{theorem-non} О действиях с бесконечно малыми \end{theorem-non}
+    \begin{enumerate}
+        \item Сумма / разность б.м. это б.м.
+        \begin{proof}
+            Предел суммы / разности это сумма / разность пределов. 
+        \end{proof}
+        \item Произведение б.м. и ограниченной это б.м.
+        \begin{proof}
+            $y_n$ - ограниченная $\Rightarrow |y_n| \leqslant M$ 
+            
+            $x_n$ - б.м. $\Rightarrow \forall \varepsilon > 0\quad \exists N : \forall n \geqslant N\quad |x_n| < \frac{\varepsilon}{M}$
+            
+            $|x_ny_n| \leqslant M|x_n| < \varepsilon$
+        \end{proof}
+    \end{enumerate}

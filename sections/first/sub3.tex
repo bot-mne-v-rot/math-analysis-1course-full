@@ -1,0 +1,67 @@
+\subsection{Аксиомы вещественных чисел}
+\begin{conj}
+    Вещественные числа - алгебраическая структура, над которой определены 
+    операции сложения ``+'' и умножения ``$\cdot$'' $(\mathbb{R} * \mathbb{R} \Longrightarrow \mathbb{R})$
+\end{conj}
+\begin{conj}
+    Аксиомы вещественных чисел:
+\end{conj}
+\begin{itemize}
+    \item[$A_1$] Ассоциативность сложения \\
+     $x + (y + z) = (x + y) + z$
+    \item[$A_2$] Коммутативность сложения \\
+     $x + y = y + x$
+    \item[$A_3$] Существование нуля \\
+     $\exists 0 \in \mathbb{R} : \forall x \in \mathbb{R} \; x + 0 = x$
+    \item[$A_4$] Существование обратного элемента по сложению \\
+     $\forall x \in \mathbb{R} \; \exists (-x) \in \mathbb{R} : x + (-x) = 0$
+    \item[$M_1$] Ассоциативность умножения \\
+     $x(y \cdot z) = (x \cdot y)z$
+    \item[$M_2$] Коммутативность умножения \\
+     $xy = yx$
+    \item[$M_3$] Существование единицы \\
+     $\exists 1 \in \mathbb{R} : \forall x \in \mathbb{R} \; x \cdot 1 = x$
+    \item[$M_4$] Существование обратного элемента по умножению \\
+     $\forall x \in \mathbb{R} \; \exists x^{-1} \in \mathbb{R} : x \cdot x^{-1} = 1$
+    \item[$M_A$] Дистрибутивность \\
+     $(x + y) \cdot z = x \cdot z + y \cdot z$ 
+\end{itemize}
+\nocite - Вышеперечисленные аксиомы бразуют поле \vspace{0.5cm} \\
+\textbf{Бинарное отношение} ``$\leqslant$'' \\
+Аксиомы порядка, задающие отношение порядка на множестве вещественных чисел:
+\begin{itemize}
+    \item[$O_1$] $x \leqslant x \quad \forall x$
+    \item[$O_2$] $x \leqslant y $  и  $ y \leqslant x \Longrightarrow x = y$ 
+    \item[$O_3$] $x \leqslant y $  и  $ y \leqslant z \Longrightarrow x \leqslant z$ 
+    \item[$O_4$] $\forall x, y \in \mathbb{R} : x \leqslant y $ или $ y \leqslant x$
+    \item[$O_4$] $x \leqslant y \Longrightarrow x + z \leqslant y + z \quad \forall z$ 
+    \item[$O_4$] $0 \leqslant x $ и $ 0 \leqslant y \Longrightarrow 0 \leqslant xy$  
+\end{itemize}
+\begin{theorem-non}
+    Аксиома полноты
+\end{theorem-non}
+$A, B \subset \mathbb{R} : A \neq \varnothing, B \neq \varnothing, \forall a \in A \; \forall b \in B \; a \leqslant b$ \\
+Тогда $\exists c \in \mathbb{R} : a \leqslant c \leqslant b \; \forall a \in A \; \forall b \in B$
+\begin{theorem-non}
+    Принцип Архимеда
+\end{theorem-non}
+Согласно принципу Архимеда: $\forall x \in \mathbb{R}$ и $\forall y_{>0} \in \mathbb{R} \; \exists n \in \mathbb{N} : x < ny$
+\begin{proof}  
+    \quad \\ $A = \{a \in \mathbb{R} : \exists n \in \mathbb{N} : a < ny\}, A \neq \varnothing$ т.к. $0 \in A$ \\
+    $B = \mathbb{R} \; \setminus \; A$ \\
+    Пусть $A \neq \mathbb{R}$, тогда $B \neq \varnothing$ Покажем, что $a \leqslant b$, если $a \in A, b \in B$ \\
+    Пойдем от противного. Если $b < a < ny \Longrightarrow b < ny \Longrightarrow b \in A$ - противоречие \\
+    Таким образом, по аксиоме полноты $\exists c \in \mathbb{R} : a \leqslant c \leqslant b \quad \forall a \in A, \forall b \in B$ \\
+    Предположим, что $c \in A$. Тогда $c < ny$ для некоторого $n \in \mathbb{N} \Longrightarrow c + y < (n + 1)y \Longrightarrow \\ 
+    c + y \in A \Longrightarrow c + y \leqslant c \Longrightarrow y \leqslant 0$. Это противоречит условию. \\
+    Пусть $c \in B$. Так как $y > 0, c - y < c$. Так как $B$ - дополненние $A$ и $c - y \neq c, \; c - y \in A
+    \Longrightarrow c - y < ny \Longrightarrow c < (n + 1)y \Longrightarrow c \in A$. Снова пришли к противоречию. \\
+    Значит $c \notin A, c \notin B \Longrightarrow c$ не существует $\Longrightarrow B = \varnothing \Longrightarrow A = \mathbb{R}$ 
+\end{proof}
+\textbf{\textit{Следствие:}}
+    \begin{itemize}
+        \item[] $\forall \varepsilon_{> 0} \; \exists n \in \mathbb{N}: {{1}\over{n}} < \varepsilon$
+        \begin{proof}
+           \quad \\ $x = 1, y = \varepsilon \Longrightarrow \exists n \in N: 1 < n\varepsilon$
+        \end{proof} 
+    \end{itemize}

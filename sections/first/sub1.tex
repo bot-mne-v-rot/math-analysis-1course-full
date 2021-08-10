@@ -1,0 +1,76 @@
+\subsection{Множества}
+\begin{conj} Множество - набор уникальных элементов \end{conj}
+
+Множества - большие буквы $A, B,\dots$ \\
+Элементы множеств - маленькие буквы $a, b,\dots$ \\
+$x \in A - x$ пренадлежит $A$ \\
+$x \notin A - x$ не пренадлежит $A$ \\
+$\mathbb{N} = \{1, 2, 3, \dots\} \\
+\mathbb{Z, Q} = \{{{m}\over{n}} : m \in \mathbb{Z}, n \in\mathbb{N}\} \\
+\mathbb{R}$ - вещественные числа \\
+$\mathbb{C}$ - комплексные числа \\
+\begin{theorem-non} Правила Де Моргана \end{theorem-non}
+    \begin{itemize}
+        \item[] $A \; \setminus \; (\bigcup\limits_{\alpha \in I} B_{\alpha}) 
+        = \bigcap\limits_{\alpha \in I}(A \setminus B_{\alpha})$
+
+        \item[] $A \; \setminus \; (\bigcap\limits_{\alpha \in I} B_{\alpha}) 
+        = \bigcup\limits_{\alpha \in I}(A \setminus B_{\alpha})$
+    \end{itemize}
+\begin{proof}
+    Докажем для первой формулы. Вторая доказывается аналогично. \\
+    $x \in A \; \setminus \; (\bigcup\limits_{\alpha \in I} B_{\alpha}) 
+    \Longleftrightarrow \begin{cases}
+        x \in A \\
+        x \notin \bigcup\limits_{\alpha \in I} B_{\alpha}
+    \end{cases}
+    \Longleftrightarrow \begin{cases}
+        x \in A \\
+        x \notin B_{\alpha} \; \; $при всех$ \; \alpha
+    \end{cases} 
+    \Longleftrightarrow x \in A \; \setminus \; B_{\alpha}$ при всех $\alpha \in I
+    \Longleftrightarrow x \in \bigcap\limits_{\alpha \in I}(A \setminus B_{\alpha})$ 
+\end{proof} \newpage
+\begin{theorem-non} Операции над множествами \end{theorem-non}
+\begin{itemize}
+    \item $A \cup B = \{x: x \in A $ или $ x \in B\}$
+    \item $A \cap B = \{x: x \in A, x  \in B\}$
+    \item $A \; \setminus \; B = \{x: x \in A, x  \notin B\}$
+    \item $A \bigtriangleup B = (A \; \setminus \; B) \cup (B \; \setminus \; A)$
+\end{itemize}
+\notice - $\bigtriangleup, \cup, \cap$ - комммутативны, ассоциативны
+\begin{conj} 
+    Декартово произведение множеств 
+    $A \times B = \{\langle a, b \rangle : a \in A; b \in B \}$ 
+\end{conj}
+\begin{theorem-non} \end{theorem-non}
+    \begin{itemize}
+        \item[] $A \cap \bigcup\limits_{\alpha \in I} B_{\alpha} =
+        \bigcup\limits_{\alpha \in I}(A \cap B_{\alpha}) $
+
+        \item[] $A \cup \bigcap\limits_{\alpha \in I} B_{\alpha} =
+        \bigcap\limits_{\alpha \in I}(A \cup B_{\alpha}) $
+    \end{itemize}
+\begin{proof}
+        $x \in A \cap \bigcup\limits_{\alpha \in I} B_{\alpha}
+        \Longleftrightarrow \begin{cases}
+            x \in A \\
+            x \in \bigcup\limits_{\alpha \in I} B_{\alpha}
+        \end{cases} \Longleftrightarrow \begin{cases}
+            x \in A \\
+            x \in B_{\alpha}$ для некоторых $\alpha \in I
+        \end{cases}\vspace{0.5cm} \Longleftrightarrow 
+        x \in A \cap B_{\alpha}$ для некоторых $\alpha \in I 
+        \Longleftrightarrow 
+        x \in \bigcup\limits_{\alpha \in I}(A \cap B_{\alpha})$
+    \end{proof}
+\begin{conj} 
+    Упорядоченная пара $ \langle a, b \rangle $ - пара  ``пронумерованных'' элементов
+\end{conj}
+    $  \langle a, b \rangle $ = $  \langle c, d \rangle \rotatebox[origin=c]{150}{$\Longleftrightarrow$}$ 
+\begin{scriptsize}
+\estiloJava
+\begin{lstlisting}[caption={}, label=]
+    ((a == c) && (b == d))
+\end{lstlisting}
+\end{scriptsize}
